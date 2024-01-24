@@ -477,6 +477,7 @@ function toggleTextJira() {
     }
 }
 
+//Reset's the form and output to initial state
 function clearForm() {
     var inputs = document.querySelectorAll('input[type="text"], input[type="number"], select, textarea');
 

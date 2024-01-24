@@ -490,12 +490,6 @@ function clearForm() {
     document.getElementById('hhidField').value = '';
     document.getElementById('hhidSection').style.display = 'none';
 
-    document.getElementById('callbackNum').value = '';
-    document.getElementById('callbackSection').style.display = 'none';
-    
-    document.getElementById('caller').value = '';
-    document.getElementById('callerSection').style.display = 'none';
-
     document.getElementById('notesField').value = '';
     document.getElementById('notesSection').style.display = 'none';
 

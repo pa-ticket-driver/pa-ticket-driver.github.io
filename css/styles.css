@@ -296,18 +296,3 @@ button#clear-button {
     box-shadow: 0 0 4px rgba(23, 23, 23, 0.8);
     transition: 1.25s;
 }
-
-.menu.active .toggle {
-    transform: rotate(315deg);
-    background-color: var(--bg-color);
-}
-
-.menu li {
-    transition: 0.5s;
-    transition-delay: calc(0.1s * var(--i));
-}
-
-.menu.active li {
-    transform: translateY(calc(100px / 3 * var(--i))) translateY(45px);
-    opacity: 1;
-}

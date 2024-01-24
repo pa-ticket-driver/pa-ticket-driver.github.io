@@ -547,12 +547,3 @@ function copyOutput() {
 
     alert('Ticket copied to clipboard!');
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-        let toggle = document.querySelector('.toggle');
-        let menu = document.querySelector('.menu');
-
-        toggle.onclick = () => {
-            menu.classList.toggle('active');
-        };
-    });

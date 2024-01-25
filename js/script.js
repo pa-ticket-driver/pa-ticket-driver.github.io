@@ -477,9 +477,8 @@ function toggleTextJira() {
     }
 }
 
-//Reset's the form and output to initial state
 function clearForm() {
-    var inputs = document.querySelectorAll('input[type="text"], input[type="number"], select, textarea');
+    var inputs = document.querySelectorAll('input[type="text"], input[type="number"],input[type="checkbox"], select, textarea');
 
     inputs.forEach(function (input) {
         input.value = '';
@@ -542,3 +541,15 @@ function copyOutput() {
 
     alert('Ticket copied to clipboard!');
 }
+
+function handleCheckboxKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.checked = !this.checked;
+    }
+  }
+
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('keydown', handleCheckboxKeyPress);
+  });

@@ -39,7 +39,6 @@ function generateOutput() {
     var enfcarrierstatus = document.getElementById('enfcarrierstatus').value;
     var enfourstatus = document.getElementById('enfourstatus').value;
     var enfoutcome = document.getElementById('enfoutcome').value;
-    var enfcarrierrep = document.getElementById('enfcarrierrep').value;
     var enfdob = document.getElementById('enfdob').value;
     var enfaddress = document.getElementById('enfaddress').value;
     var enfssn = document.getElementById('enfssn').value;
@@ -55,7 +54,6 @@ function generateOutput() {
     var cnfcarrierstatus = document.getElementById('cnfcarrierstatus').value;
     var cnfourstatus = document.getElementById('cnfourstatus').value;
     var cnfoutcome = document.getElementById('cnfoutcome').value;
-    var cnfcarrierrep = document.getElementById('cnfcarrierrep').value;
     var cnfdob = document.getElementById('cnfdob').value;
     var cnfaddress = document.getElementById('cnfaddress').value;
     var cnfssn = document.getElementById('cnfssn').value;
@@ -71,7 +69,6 @@ function generateOutput() {
     var tnfcarrierstatus = document.getElementById('tnfcarrierstatus').value;
     var tnfourstatus = document.getElementById('tnfourstatus').value;
     var tnfoutcome = document.getElementById('tnfoutcome').value;
-    var tnfcarrierrep = document.getElementById('tnfcarrierrep').value;
     var tnfdob = document.getElementById('tnfdob').value;
     var tnfaddress = document.getElementById('tnfaddress').value;
     var tnfssn = document.getElementById('tnfssn').value;
@@ -117,7 +114,6 @@ function generateOutput() {
     var reinstatepremium = document.getElementById('reinstatepremium').value;
     var reinstateaptc = document.getElementById('reinstateaptc').value;
     var reinstatenet = document.getElementById('reinstatenet').value;
-    var reinstaterep = document.getElementById('reinstaterep').value;
     
     var enstatuscarrier = document.getElementById('enstatuscarrier').value;
     var enstatusplan = document.getElementById('enstatusplan').value;

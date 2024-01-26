@@ -116,9 +116,7 @@ function generateOutput() {
     var reinstatessn = document.getElementById('reinstatessn').value;
     var reinstatepremium = document.getElementById('reinstatepremium').value;
     var reinstateaptc = document.getElementById('reinstateaptc').value;
-    var reinstatedates = document.getElementById('reinstatedates').value;
     var reinstatenet = document.getElementById('reinstatenet').value;
-    var reinstatedates = document.getElementById('reinstatedates').value;
     var reinstaterep = document.getElementById('reinstaterep').value;
     
     var enstatuscarrier = document.getElementById('enstatuscarrier').value;
@@ -130,7 +128,6 @@ function generateOutput() {
     var enstatuspremium = document.getElementById('enstatuspremium').value;
     var enstatusaptc = document.getElementById('enstatusaptc').value;
     var enstatusnet = document.getElementById('enstatusnet').value;
-    var enstatusdates = document.getElementById('enstatusdates').value;
     
     var correctioncarrier = document.getElementById('correctioncarrier').value;
     var correctiontopic = document.getElementById('correctiontopic').value;
@@ -294,7 +291,7 @@ function generateOutput() {
 
             subjectText += "Subsidy Not Found: " + snfcarrier;
             
-            outputText += firstLast + " (ID:" + hhidField + ") stated that " + snfcarrier + " does not see subsidies on their enrollment. Customer is enrolled in " + snfplan + " with Policy ID# (" + snfpolicy + "). Desired outcome is: " + snfoutcome + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + snfdob + "<br>" + "Full Address: " + snfaddress + "<br>" + "Last four digits of SSN: " + snfssn + "<br>" + "Enrollment Premium Amount: " + snftotalpremium + "<br>" + "APTC: " + snfaptc + "<br>" + "CSRs: " + snfcsr + "<br>" + "Net Premium: " + snfnet + "<br>" + "Effective Dates: " + snfdates;
+            outputText += firstLast + " (ID:" + hhidField + ") stated that " + snfcarrier + " does not see subsidies on their enrollment. Customer is enrolled in " + snfplan + " with Policy ID# (" + snfpolicy + ") for Member ID# (" + snfmember + "). Desired outcome is: " + snfoutcome + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + snfdob + "<br>" + "Full Address: " + snfaddress + "<br>" + "Last four digits of SSN: " + snfssn + "<br>" + "Enrollment Premium Amount: " + snftotalpremium + "<br>" + "APTC: " + snfaptc + "<br>" + "CSRs: " + snfcsr + "<br>" + "Net Premium: " + snfnet + "<br>" + "Effective Dates: " + snfdates;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -316,7 +313,7 @@ function generateOutput() {
 
             subjectText += "Reinstatement Request: " + reinstatecarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Full Address" + reinstateaddress + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
         
@@ -327,7 +324,7 @@ function generateOutput() {
 
             subjectText += "Enrollment Status Pending";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + enstatuscarrier + ": " + enstatusplan + " for Policy ID# (" + enstatuspolicy + ") to be confirmed. Enrollment status is currently showing as Pending." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + enstatusdob + "<br>" + "Last four digits of SSN: " + enstatusssn + "<br>" + "Enrollment Premium Amount: " + enstatuspremium + "<br>" + "APTC: " + enstatusaptc + "<br>" + "Net Premium: " + enstatusnet;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + enstatuscarrier + ": " + enstatusplan + " for Policy ID# (" + enstatuspolicy + ") to be confirmed. Enrollment status is currently showing as Pending." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + enstatusdob + "<br>" + "Full Address: " + enstatusaddress + "Last four digits of SSN: " + enstatusssn + "<br>" + "Enrollment Premium Amount: " + enstatuspremium + "<br>" + "APTC: " + enstatusaptc + "<br>" + "Net Premium: " + enstatusnet;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 

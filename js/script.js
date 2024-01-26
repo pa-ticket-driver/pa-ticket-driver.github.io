@@ -7,9 +7,12 @@ function showQuestions() {
     var selectedOption = document.getElementById('type').value;
 
     var questionSet = document.getElementById(selectedOption + 'Questions');
+    
     if (questionSet) {
         questionSet.classList.add('visible');
     }
+
+
     
     var nameSection = document.getElementById('nameSection');
     nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
@@ -432,7 +435,7 @@ function generateOutput() {
             ticSubText += "Assister";
             ticPriorityText += "Medium";
 
-            subjectText += "Broker Unable to Access Account";
+            subjectText += "Assister Unable to Access Account";
                 
             outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. Assister is still having trouble resetting the password on their own. Confirmed assister's login email address is " + assisteremail + ".";
             outputText += "<br><br>" + "Additional Notes: " + notesField;

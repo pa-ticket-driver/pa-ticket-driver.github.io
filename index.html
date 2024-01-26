@@ -44,6 +44,14 @@
 					<option value="text">Text Message Complaint</option>
 					<option value="maissue">MA Account Access Issue</option>
 					<option value="remove">Pennie Account Removal</option>
+					<option value="unsub">Unsubscribe from Email Notifications</option>
+					<option value="faxunassigned">Fax Template - Unnasigned Document</option>
+					<option value="faxreturned">Fax Template - Returned Notice</option>
+					<option value="highcall">High Call Volume Callback Comment</option>
+					<option value="overflow">OEP Overflow</option>
+					<option value="revfilled">REV-1882 Filled Attestation</option>
+					<option value="revvendor">REV-1882 Unavailable (Vendor Supported)</option>
+					<option value="revdor">REV-1882 Unavailable (DOR)</option>
 				</select>
 			</div>
 
@@ -699,6 +707,67 @@
 				
 				<label for="removereason">Reason the customer is requesting removal:</label>
 				<input type="text" id="removereason" name="removereason">
+			</div>
+
+			<div class="question-set" id="unsubQuestions">
+				<h4>Instructions:</h4>
+				<h5>Be sure to review the Cease Communication Guidance before creating a ticket. No all request are able to be granted in the manner of which the customer is asking.</h5>
+
+				<label for="unsubemail">Email address the customer is requesting to be unsubscribed:</label>
+				<input type="text" id="unsubemail" name="unsubemail">
+			</div>
+
+			<div class="question-set" id="faxunassignedQuestions">
+				<h4>Instructions:</h4>
+				<h5>Only for the Fax Team. For use if a customer called in stating they have faxed in a requested document and the referenced document is not populating on the customer's account.</h5>
+			</div>
+
+			<div class="question-set" id="faxreturnedQuestions">
+				<h4>Instructions:</h4>
+				<h5>Only for the Fax Team. For use if a return notice is received.</h5>
+
+				<label for="returneddate">Date returned notice was received:</label>
+				<input type="text" id="returneddate" name="returneddate">
+
+				<label for="outreachdate">Date outreach was made to the customer:</label>
+				<input type="text" id="outreachdate" name="outreachdate">
+			</div>
+
+			<div class="question-set" id="highcallQuestions">
+				<h4>Instructions:</h4>
+				<h5>To be used when the Call Center enter High Call Volume Protocals. This will be relayed by your management team.</h5>
+
+				<label for="highcallreason">Detailed explanation of the reason for the call:</label>
+				<input type="text" id="highcallreason" name="highcallreason">
+
+				<label for="highcallnumber">Callback number:</label>
+				<input type="text" id="highcallnumber" name="highcallnumber">
+			</div>
+
+			<div class="question-set" id="overflowQuestions">
+				<h4>Instructions:</h4>
+				<h5>Used if a customer qualifies, based on the Exceptional Circumstances SEP, for a 1/1 effective date.</h5>
+			</div>
+
+			<div class="question-set" id="revfilledQuestions">
+				<h4>Instructions:</h4>
+				<h5>Used for Tracking Purposes and the customer has already been approved for the SEP. Confirmed the form was submitted or they amended their taxes.</h5>
+			</div>
+
+			<div class="question-set" id="revvendorQuestions">
+				<h4>Instructions:</h4>
+				<h5>Used for Tracking Purposes. Automated Rejection. Customer had the form available for use and they don't want to amend.</h5>
+
+				<label for="revvendortax">Tax software the customer used while filing their taxes:</label>
+				<input type="text" id="revvendortax" name="revvendortax">
+			</div>
+
+			<div class="question-set" id="revdorQuestions">
+				<h4>Instructions:</h4>
+				<h5>Used for those where the form was NOT available or paper application. Will need to be confirmed by the DOR (Department of Revenue)</h5>
+
+				<label for="revdortax">Tax software the customer used while filing their taxes:</label>
+				<input type="text" id="revdortax" name="revdortax">
 			</div>
 			
 			<div class="name" id="nameSection">

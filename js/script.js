@@ -220,6 +220,18 @@ function generateOutput() {
     var maissuecode = document.getElementById('maissuecode').value;
     var maissuesteps = document.getElementById('maissuesteps').value;
     var maissuehash = document.getElementById('maissuehash').value;
+
+    var unsubemail = document.getElementById('unsubemail').value;
+
+    var returneddate = document.getElementById('returneddate').value;
+    var outreachdate = document.getElementById('outreachdate').value;
+
+    var highcallreason = document.getElementById('highcallreason').value;
+    var highcallnumber = document.getElementById('highcallnumber').value;
+
+    var revvendortax = document.getElementById('revvendortax').value;
+
+    var revdortax = document.getElementById('revdortax').value;
     
     toggleText();
     toggleTextAble();
@@ -417,7 +429,63 @@ function generateOutput() {
             outputText += firstLast + " (ID:" + hhidField + ") would like to be completely removed from Pennie's system due to " + removereason + ". Customer account has been notated and the call has been dispositioned as DNC.";
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
+
+        case 'unsub':
+            subjectText += "SF Promotional EML CR";	
                 
+            outputText += firstLast + " (ID:" + hhidField + ") does not want to receive promotional emails at " + unsubemail + ". Please change pref.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+         
+        case 'faxunassigned':
+            subjectText += "Unassigned Document";	
+                
+            outputText += firstLast + " (ID:" + hhidField + ") submitted a document via fax. However, there are no corresponding tickets for the fax received.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+        
+        case 'faxreturned':
+            subjectText += "Returned Notice";	
+                
+            outputText += "Returned notice received for " + firstLast + " (ID:" + hhidField + ") on " + returneddate + ". Secured inbox message sent to claimed account on " + outreachdate;
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
+        case 'highcall':
+            subjectText += "High Call Volume Callback Ticket";	
+                
+            outputText += firstLast + " (ID:" + hhidField + ") called in during our high call volume protocol due to " + highcallreason + ". Customer would like to be called back at " + firstLast + ", " + highcallnumber;
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
+        case 'overflow':
+            subjectText += "Effective Date Change";	
+                
+            outputText += "Customer " + firstLast + " (ID:" + hhidField + ") qualifies for the 1/1 effective date based on Exceptional Circumstances SEP.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
+        case 'revfilled':
+            subjectText += "Path to Pennie SEP";	
+                
+            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed REV-1882 form and verbally attested to statement(s) to qualify for the Path to Pennie SEP.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
+        case 'revvendor':
+            subjectText += "Path to Pennie SEP";	
+                
+            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revvendortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this ticket will not be sent to DOR for validation.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
+        case 'revdor':
+            subjectText += "Path to Pennie SEP";	
+                
+            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revdortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this is a ticket for DOR to review their eligibility and provided with next steps to check account for once ticket is reviewed.";
+            outputText += "<br><br>" + "Additional Notes: " + notesField;
+            break;
+
         default:
             break;
     }

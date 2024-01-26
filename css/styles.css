@@ -251,6 +251,26 @@ button#clear-button {
 
 .formButtons {
     display: flex;
-     justify-content: space-between;
-      margin-top: 10px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+span {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-left: 5px; 
+}
+
+.ticDetails {
+    display: grid;
+    width: 100%;
+    gap: 0px 10px;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+    text-align: left;
+    border: 1px solid navy;
+    border-radius: 5px;
 }

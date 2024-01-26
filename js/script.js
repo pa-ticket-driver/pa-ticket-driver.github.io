@@ -240,6 +240,9 @@ function generateOutput() {
     if (questionSet) {
         var outputText = "";
         var subjectText = "";
+        var ticTypeText = "";
+        var ticSubText = "";
+        var ticPriorityText = "";
 
         questionSet.querySelectorAll('input[type="text"]').forEach(function (input) {
             var question = input.previousElementSibling.innerText.replace(':', '').trim();
@@ -249,6 +252,10 @@ function generateOutput() {
         
         switch (selectedOption) {
         case 'enf':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += "Enrollment Not Found: " + enfcarrier;	
                 
             outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates;
@@ -256,6 +263,10 @@ function generateOutput() {
             break;
                 
         case 'cnf':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += "Cancellation Not Found: " + cnfcarrier;
                 
             outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates;
@@ -263,6 +274,10 @@ function generateOutput() {
             break;
                 
         case 'tnf':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += "Termination Not Found: " + tnfcarrier;
                 
             outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + tnfcarrier + " shows Policy ID# (" + tnfpolicy + ") and " + tnfplan + " for Member ID# (" + tnfmember + ") as " + tnfcarrierstatus + " on their end, but this plan shows " + tnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + tnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + tnfdob + "<br>" + "Full Address: " + tnfaddress + "<br>" + "Last four digits of SSN: " + tnfssn + "<br>" + "Enrollment Premium Amount: " + tnftotalpremium + "<br>" + "APTC: " + tnfaptc + "<br>" + "Net Premium: " + tnfnet + "<br>" + "Effective Dates: " + tnfdates;
@@ -270,6 +285,10 @@ function generateOutput() {
             break;
                 
         case 'snf':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += "Subsidy Not Found: " + snfcarrier;
             
             outputText += firstLast + " (ID:" + hhidField + ") stated that " + snfcarrier + " does not see subsidies on their enrollment. Customer is enrolled in " + snfplan + " with Policy ID# (" + snfpolicy + "). Desired outcome is: " + snfoutcome + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + snfdob + "<br>" + "Full Address: " + snfaddress + "<br>" + "Last four digits of SSN: " + snfssn + "<br>" + "Enrollment Premium Amount: " + snftotalpremium + "<br>" + "APTC: " + snfaptc + "<br>" + "CSRs: " + snfcsr + "<br>" + "Net Premium: " + snfnet + "<br>" + "Effective Dates: " + snfdates;
@@ -277,6 +296,10 @@ function generateOutput() {
             break;
                 
         case 'billing':
+            ticTypeText += "Enrollment";
+            ticSubText += "Insurer - Billing Issues";
+            ticPriorityText += "Medium";
+
             subjectText += "Billing Issues: " + billingcarrier;	
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting " + billingreason + " for enrollment " + billingcarrier + ": " + billingplan + " in the amount of $" + billingpayment + ". Customer has already contacted the carrier directly and the carrier redirected the customer to Pennie. Please investigate the billing issue for Policy ID# (" + billingpolicy + ") with Member ID# (" + billingmember + ")." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + billingdob + "<br>" + "Full Address: " + billingaddress + "<br>" + "Last four digits of SSN: " + billingssn + "<br>" + "Enrollment Premium Amount: " + billingpremium + "<br>" + "APTC: " + billingaptc + "<br>" + "Net Premium: " + billingnet;
@@ -284,6 +307,10 @@ function generateOutput() {
             break;
                 
         case 'reinstatement':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += "Reinstatement Request: " + reinstatecarrier;
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
@@ -291,6 +318,10 @@ function generateOutput() {
             break;
         
         case 'enstatus':
+            ticTypeText += "Enrollment";
+            ticSubText += "Billing Issues";
+            ticPriorityText += "Medium";
+
             subjectText += "Enrollment Status Pending";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + enstatuscarrier + ": " + enstatusplan + " for Policy ID# (" + enstatuspolicy + ") to be confirmed. Enrollment status is currently showing as Pending." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + enstatusdob + "<br>" + "Last four digits of SSN: " + enstatusssn + "<br>" + "Enrollment Premium Amount: " + enstatuspremium + "<br>" + "APTC: " + enstatusaptc + "<br>" + "Net Premium: " + enstatusnet;
@@ -298,6 +329,10 @@ function generateOutput() {
             break;
                 
         case 'correction':
+            ticTypeText += "Issuer";
+            ticSubText += "Insurer";
+            ticPriorityText += "Medium";
+
             subjectText += correctiontopic + " Correction";
                 
             outputText += firstLast + " (ID:" + hhidField + ") stated " + correctioncarrier + " has their " + correctiontopic + "displayed as " + correctionold + ", but Pennie correctly reflects their " + correctiontopic + " as " + correctionupdate + " on Policy ID# (" + correctionpolicy + ").";
@@ -305,6 +340,10 @@ function generateOutput() {
             break;
                 
         case 'retro':
+            ticTypeText += "Issuer";
+            ticSubText += "Retroactive Termination";
+            ticPriorityText += "Medium";
+
             subjectText += "30-Day Retroactice Termination Request: " + retrocarrier;
                 
             outputText += "Policy ID: " + retropolicy + "<br>" + "Subscriber: " + firstLast + "<br>" + "Date of Birth: " + retrodob + "<br>" + "Coverage Start Date: " + retrostart + "<br>" + "Requested Termination Date: " + retroterm + "<br><br>" + firstLast + " (ID:" + hhidField + ") has requested retroactive termination of their coverage back to the requested coverage end date above. Customer has already attested that they have other coverage, and the customer is not aware of any pharmacy claims after the requested termination date.";
@@ -312,6 +351,10 @@ function generateOutput() {
             break;
                 
         case 'cancellation':
+            ticTypeText += "Enrollment";
+            ticSubText += "Enrollment Cancellation";
+            ticPriorityText += "Medium";
+
             subjectText +=	"Cancellation Request: " + cancelcarrier;
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment from " + cancelcarrier + " on the plan " + cancelplan + ", with the Policy ID# (" + cancelpolicy + "), to be cancelled. Customer reason for cancellation is " + cancelreason + ".";
@@ -319,6 +362,10 @@ function generateOutput() {
             break;
                 
         case 'backdate':
+            ticTypeText += "Triage";
+            ticSubText += "Triage";
+            ticPriorityText += "Medium";
+
             subjectText += "Backdate Termination Request: " + backdatecarrier;
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID# (" + backdatepolicy + ") to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + "<br><br>" + "If applicable, customer's other coverage will be starting on: " + backdatestart;
@@ -326,6 +373,10 @@ function generateOutput() {
             break;
                 
         case 'aptc':
+            ticTypeText += "Triage";
+            ticSubText += "Triage";
+            ticPriorityText += "Medium";
+
             subjectText += "Apply APTC Request";
                 
             outputText += firstLast + " (ID:" + hhidField + ") is requesting APTC to be applied to theri enrollment " + aptccarrier + ": " + aptcplan + " with the Policy ID# (" + aptcpolicy + "). APTC amount is $" + aptcamount + " and should be applied to the customer's account based off their application date. The APTC needs to be applied because " + aptcwhy + "<be><br>" + "Application ID: " + aptcapp;
@@ -333,6 +384,10 @@ function generateOutput() {
             break;
                 
         case 'retromed':
+            ticTypeText += "Triage";
+            ticSubText += "Triage";
+            ticPriorityText += "Medium";
+
             subjectText += "Retroactive Term - Medicaid";
                 
             outputText += firstLast + " (ID:" + hhidField + ") is requesting to terminate Policy ID# (" + retromedpolicy + " effective " + retromedterm + " due to the gain of Medicaid effective " + retromedgain + " for the following member(s):" + "<br>" + retromedmembers + "<br><br>" + "Customer enrolled in coverage through Pennie: " + retromedpa + "<br>" + "Enrolled in Medicaid or CHIP with retroactive coverage start date: " + retromedstarted + "<br>" + "Advised customer to provide documentation showing the following: " + retromeddoc + "<br>" + "A. Which famiy Members are enrolled in Medicaid or CHIP." + "<br>" + "B. Date the Medicaid or CHIP began." + "<br>" + "C. Date the notice was generated and/or mailed to the customer. Issue reported within 60 days of receipt of eligibility notice from Mediciad or CHIP.";
@@ -340,6 +395,10 @@ function generateOutput() {
             break;
                 
         case 'switch':
+            ticTypeText += "Triage or Technical";
+            ticSubText += "Triage or Technical";
+            ticPriorityText += "Medium";
+
             subjectText += "Primary/Self Switch";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in reporting there is an error on their enrollment. " + switchcx + " is incorrectly listed as " + switchwrong + " when they should be listed as SELF on the enrollment. Please investigate enrollment " + switchcarrier + ": " + switchplan + " with Policy ID# (" + switchpolicy + ")." + "<br><br>" + "Name: " + firstLast + "<br>" + "DOB: " + switchdob + "<br>" + "Full Address: " + switchaddress + "<br>" + "Last four digits of SSN: " + switchssn;
@@ -347,6 +406,10 @@ function generateOutput() {
             break;
                 
         case 'verification':
+            ticTypeText += "Technical";
+            ticSubText += "Technical";
+            ticPriorityText += "Medium";
+
             subjectText += "Verification Error";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in stating their dashboard is requesting documents, but when clicking on upload documents, everything is showing verified. I tried this on my end and receive the same result as the customer." + "<br><br>" + "Other troubleshooting included: " + verificationsteps;
@@ -354,6 +417,10 @@ function generateOutput() {
             break;
                 
         case 'broker':
+            ticTypeText += "Broker";
+            ticSubText += "Broker";
+            ticPriorityText += "Medium";
+
             subjectText += "Broker Unable to Access Account";
                 
             outputText += "Broker " + brokername + " called in due to being locked out of their account. I checked under users to make sure the account is active and provided broker with their security answer to reset password. The reset was unsuccessful. Confirmed broker's login email address is " + brokeremail + ".";
@@ -361,6 +428,10 @@ function generateOutput() {
             break;
                 
         case 'assister':
+            ticTypeText += "Assister";
+            ticSubText += "Assister";
+            ticPriorityText += "Medium";
+
             subjectText += "Broker Unable to Access Account";
                 
             outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. Assister is still having trouble resetting the password on their own. Confirmed assister's login email address is " + assisteremail + ".";
@@ -368,6 +439,10 @@ function generateOutput() {
             break;
                 
         case 'tax':
+            ticTypeText += "1095-A";
+            ticSubText += "1095-A";
+            ticPriorityText += "Medium";
+
             subjectText += "1095-A Tax Correction";
                 
             outputText += firstLast + " (ID:" + hhidField + ")'s 1095-A Tax Form need to be corrected for Policy ID# (" + taxpolicy + "): " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
@@ -375,6 +450,10 @@ function generateOutput() {
             break;
                 
         case 'over':
+            ticTypeText += "Triage";
+            ticSubText += "Triage";
+            ticPriorityText += "Medium";
+
             subjectText += "HH with 26-year-old Dependant";
                 
             outputText += firstLast + " (ID:" + hhidField + ") has 26-year-old dependent on enrollment " + overpolicy + ". This dependent " + overdependant + " has been removed from previous enrollments on this account effective 1/1 and added to a plan of their own effective 1/1.";
@@ -382,6 +461,10 @@ function generateOutput() {
             break;
                 
         case 'error':
+            ticTypeText += "Technical";
+            ticSubText += "Technical";
+            ticPriorityText += "Medium";
+
             subjectText += "Technical Issue";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with their account. Customer reported they're receiving this error: " + errormessage + ". I tried this on my end and received the same error message." + "<br><br>" + "The steps to get to the error message are: " + errorsteps + "<br><br>" + "A screenshot has also been attached showing the error.";
@@ -389,6 +472,10 @@ function generateOutput() {
             break;
                 
         case 'rop':
+            ticTypeText += "ROP";
+            ticSubText += "ROP";
+            ticPriorityText += "Medium";
+
             subjectText += "Verification Document for ROP Reinstatement";
                 
             outputText += firstLast + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on th plan " + ropplan + " with Policy ID# (" + roppolicy + ") due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + firstLast + "_For_" + ropaptc + "_On_" + ropdate;
@@ -396,6 +483,10 @@ function generateOutput() {
             break;
                 
         case 'posappeal':
+            ticTypeText += "Complaint";
+            ticSubText += "Eligibility (customer) or Other (customer)";
+            ticPriorityText += "Medium";
+
             subjectText += "Complaint - Possible Appeal";
                 
             outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. the customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Caller: " + posappealscaller + "<br>" + "Callback Number: " + posappealscallback;
@@ -403,6 +494,10 @@ function generateOutput() {
             break;
                 
         case 'nonappeal':
+            ticTypeText += "Complaint";
+            ticSubText += "Eligibility (customer) or Other (customer)";
+            ticPriorityText += "Medium";
+
             subjectText += "Complaint - Non-Appealable";
                 
             outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. the customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Caller: " + nonappealscaller + "<br>" + "Callback Number: " + nonappealscallback;
@@ -410,6 +505,10 @@ function generateOutput() {
             break;
                 
         case 'text':
+            ticTypeText += "Feedback";
+            ticSubText += "Text Message Complaints";
+            ticPriorityText += "Medium";
+
             subjectText += "Text / SMS Complaint";
                 
             outputText += firstLast + " (ID:" + hhidField + ") has requested cease of Text / SMS messaging from Pennie. The customer was informed to reply STOP to opt out of text messages and " + textReceivedText + " received confirmation of the unsubscribe." + "<br><br>" + "Customer was " + textAbleText + " to reply STOP." + "<br>" + "A JIRA " + textJiraText + " been created." + "<br>" + textJiraNum;
@@ -417,6 +516,10 @@ function generateOutput() {
             break;
                 
         case 'maissue':
+            ticTypeText += "Technical";
+            ticSubText += "Technical";
+            ticPriorityText += "Medium";
+
             subjectText += "MA Account Access Issue";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with claiming their account. Customer reported they're receiving this error " + maissuecode + " after " + maissuesteps + ". I tested this on my end and received the same error message. I completed the following workarounds:" + "<br><br>" + "1. Only one access code was generated after attempting with the original access code." + "<br>" + "2. I confirmed the customer is entering their information as presented in the application instead of basic info (case sensitive, hyphenated last names, middle initials, spaces, county, etc.)" + "<br>" + "3. I confirmed the customer was unable to claim their account using their SSN." + "<br><br>" + "MA Hashtag: " + maissuehash;
@@ -424,6 +527,10 @@ function generateOutput() {
             break;
                 
         case 'remove':
+            ticTypeText += "";
+            ticSubText += "";
+            ticPriorityText += "";
+
             subjectText += "Pennie Account Removal";	
                 
             outputText += firstLast + " (ID:" + hhidField + ") would like to be completely removed from Pennie's system due to " + removereason + ". Customer account has been notated and the call has been dispositioned as DNC.";
@@ -431,6 +538,10 @@ function generateOutput() {
             break;
 
         case 'unsub':
+            ticTypeText += "Salesforce Emails Preference";
+            ticSubText += "Salesforce EML Preference CR";
+            ticPriorityText += "Medium";
+
             subjectText += "SF Promotional EML CR";	
                 
             outputText += firstLast + " (ID:" + hhidField + ") does not want to receive promotional emails at " + unsubemail + ". Please change pref.";
@@ -438,6 +549,10 @@ function generateOutput() {
             break;
          
         case 'faxunassigned':
+            ticTypeText += "Fax";
+            ticSubText += "Fax";
+            ticPriorityText += "Medium";
+
             subjectText += "Unassigned Document";	
                 
             outputText += firstLast + " (ID:" + hhidField + ") submitted a document via fax. However, there are no corresponding tickets for the fax received.";
@@ -445,6 +560,10 @@ function generateOutput() {
             break;
         
         case 'faxreturned':
+            ticTypeText += "Fax";
+            ticSubText += "Fax";
+            ticPriorityText += "Medium";
+
             subjectText += "Returned Notice";	
                 
             outputText += "Returned notice received for " + firstLast + " (ID:" + hhidField + ") on " + returneddate + ". Secured inbox message sent to claimed account on " + outreachdate;
@@ -452,6 +571,10 @@ function generateOutput() {
             break;
 
         case 'highcall':
+            ticTypeText += "Callback";
+            ticSubText += "High Volume Callback";
+            ticPriorityText += "Medium";
+
             subjectText += "High Call Volume Callback Ticket";	
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in during our high call volume protocol due to " + highcallreason + ". Customer would like to be called back at " + firstLast + ", " + highcallnumber;
@@ -459,6 +582,10 @@ function generateOutput() {
             break;
 
         case 'overflow':
+            ticTypeText += "OEP Overflow";
+            ticSubText += "Jan 2024 - SEP Effective Date Request";
+            ticPriorityText += "Medium";
+
             subjectText += "Effective Date Change";	
                 
             outputText += "Customer " + firstLast + " (ID:" + hhidField + ") qualifies for the 1/1 effective date based on Exceptional Circumstances SEP.";
@@ -466,6 +593,10 @@ function generateOutput() {
             break;
 
         case 'revfilled':
+            ticTypeText += "P2P Ticket";
+            ticSubText += "P2P REV -1882 Filed";
+            ticPriorityText += "Medium";
+
             subjectText += "Path to Pennie SEP";	
                 
             outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed REV-1882 form and verbally attested to statement(s) to qualify for the Path to Pennie SEP.";
@@ -473,6 +604,10 @@ function generateOutput() {
             break;
 
         case 'revvendor':
+            ticTypeText += "P2P Ticket";
+            ticSubText += "REV-1882 Not Avail (Vendor Supported)";
+            ticPriorityText += "";
+
             subjectText += "Path to Pennie SEP";	
                 
             outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revvendortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this ticket will not be sent to DOR for validation.";
@@ -480,6 +615,10 @@ function generateOutput() {
             break;
 
         case 'revdor':
+            ticTypeText += "P2P Ticket";
+            ticSubText += "REV-1882 Not Avail (Not Supported-DOW)";
+            ticPriorityText += "Medium";
+
             subjectText += "Path to Pennie SEP";	
                 
             outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revdortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this is a ticket for DOR to review their eligibility and provided with next steps to check account for once ticket is reviewed.";
@@ -492,6 +631,9 @@ function generateOutput() {
 
         document.getElementById('output').innerHTML = outputText;
         document.getElementById('subject').innerHTML = subjectText;
+        document.getElementById('ticType').innerHTML = ticTypeText;
+        document.getElementById('ticSub').innerHTML = ticSubText;
+        document.getElementById('ticPriority').innerHTML = ticPriorityText;
         
         var outputPanel = document.getElementById('output-panel');
         outputPanel.style.width = '100%';
@@ -570,6 +712,9 @@ function clearForm() {
 
     document.getElementById('subject').innerHTML = '';
     document.getElementById('output').innerHTML = '';
+    document.getElementById('ticType').innerHTML = '';
+    document.getElementById('ticSub').innerHTML = '';
+    document.getElementById('ticPriority').innerHTML = '';
 
     var outputPanel = document.getElementById('output-panel');
     outputPanel.style.width = '100%';

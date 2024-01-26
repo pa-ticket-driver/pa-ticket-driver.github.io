@@ -25,6 +25,10 @@ h1 {
     background-clip: text;
 }
 
+h3 {
+    margin: 5px;
+}
+
 h4 {
     font-size: 16px;
     margin-bottom: 0;
@@ -216,8 +220,6 @@ button#clear-button {
     display: none;
 }
 
-
-
 .name {
     display: none;
 }
@@ -263,9 +265,11 @@ span {
 }
 
 .ticDetails {
+    padding: 10px;
+    padding-bottom: 0;
     display: grid;
-    width: 100%;
-    gap: 0px 10px;
+    width: 96%;
+    gap: 10px 10px;
     grid-template-columns: auto auto auto;
 }
 
@@ -273,4 +277,5 @@ span {
     text-align: left;
     border: 1px solid navy;
     border-radius: 5px;
+    margin-bottom: 0px;
 }

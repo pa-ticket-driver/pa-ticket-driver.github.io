@@ -794,6 +794,8 @@
 	
 	<div id="output-panel">
 		<h3>Generated Ticket</h3>
+		<div id="subject"></div>
+			<button id="copy-subject-button" onclick="copySubject()">Copy Subject</button>
 		<div class="ticDetails">
 			<div class="grid-item">
 				<span>Ticket Type:</span>
@@ -808,8 +810,6 @@
 				<h5 id="ticPriority"></h5>
 			</div>
 		</div>
-		<div id="subject"></div>
-			<button id="copy-subject-button" onclick="copySubject()">Copy Subject</button>
 		<div id="output"></div>
 			<button id="copy-output-button" onclick="copyOutput()">Copy Ticket</button>
 		<h6>After copying, paste the Ticket into "Ticket Description" with CTRL + V or Right Click</h6>

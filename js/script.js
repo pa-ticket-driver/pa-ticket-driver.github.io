@@ -12,13 +12,13 @@ function showQuestions() {
         questionSet.classList.add('visible');
     }
 
-
-    
-    var nameSection = document.getElementById('nameSection');
-    nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
-    
-    var hhidSection = document.getElementById('hhidSection');
-    hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
+    if (selectedOption === 'broker' || selectedOption === 'assister') {
+        nameSection.style.display = 'none';
+        hhidSection.style.display = 'none';
+    } else {
+        nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
+        hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
+    }
     
     var notesSection = document.getElementById('notesSection');
     notesSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';

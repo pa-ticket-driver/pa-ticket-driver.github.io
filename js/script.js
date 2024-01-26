@@ -621,3 +621,7 @@ function handleCheckboxKeyPress(event) {
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('keydown', handleCheckboxKeyPress);
   });
+
+function scrollWin(x, y) {
+    window.scrollBy(x, y);
+}

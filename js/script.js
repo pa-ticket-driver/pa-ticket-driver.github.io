@@ -588,7 +588,7 @@ function generateOutput() {
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
 
-        case 'revfilled':
+        case 'revfiled':
             ticTypeText += "P2P Ticket";
             ticSubText += "P2P REV -1882 Filed";
             ticPriorityText += "Medium";

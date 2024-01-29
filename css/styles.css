@@ -228,6 +228,12 @@ button#clear-button {
     display: none;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .notes {
     display: none;
 }

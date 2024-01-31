@@ -322,7 +322,7 @@ function generateOutput() {
         
         case 'enstatus':
             ticTypeText += "Enrollment";
-            ticSubText += "Billing Issues";
+            ticSubText += "Insurer - Billing Issues";
             ticPriorityText += "Medium";
 
             subjectText += "Enrollment Status Pending";

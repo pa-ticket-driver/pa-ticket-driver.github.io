@@ -187,9 +187,11 @@ function generateOutput() {
     
     var brokername = document.getElementById('brokername').value;
     var brokeremail = document.getElementById('brokeremail').value;
+    var brokernum = document.getElementById('brokernum').value;
     
     var assistername = document.getElementById('assistername').value;
     var assisteremail = document.getElementById('assisteremail').value;
+    var assisternum = document.getElementById('assisternum').value;
     
     var ropaptc = document.getElementById('ropaptc').value;
     var ropplan = document.getElementById('ropplan').value;
@@ -309,7 +311,7 @@ function generateOutput() {
 
             subjectText += "Reinstatement Request: " + reinstatecarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Full Address" + reinstateaddress + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Full Address" + reinstateaddress + "<br>" + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
         
@@ -386,7 +388,7 @@ function generateOutput() {
 
             subjectText += "Retroactive Term - Medicaid";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") is requesting to terminate Policy ID# (" + retromedpolicy + " effective " + retromedterm + " due to the gain of Medicaid effective " + retromedgain + " for the following member(s):" + "<br>" + retromedmembers + "<br><br>" + "Customer enrolled in coverage through Pennie: " + retromedpa + "<br>" + "Enrolled in Medicaid or CHIP with retroactive coverage start date: " + retromedstarted + "<br>" + "Advised customer to provide documentation showing the following: " + retromeddoc + "<br>" + "A. Which famiy Members are enrolled in Medicaid or CHIP." + "<br>" + "B. Date the Medicaid or CHIP began." + "<br>" + "C. Date the notice was generated and/or mailed to the customer. Issue reported within 60 days of receipt of eligibility notice from Mediciad or CHIP.";
+            outputText += firstLast + " (ID:" + hhidField + ") is requesting to terminate Policy ID# (" + retromedpolicy + " effective " + retromedterm + " due to the gain of Medicaid effective " + retromedgain + " for the following member(s):" + "<br>" + retromedmembers + "<br><br>" + "Customer enrolled in coverage through Pennie: " + retromedpa + "<br>" + "Enrolled in Medicaid or CHIP with retroactive coverage start date: " + retromedstarted + "<br>" + "Advised customer to provide documentation showing the following: " + retromeddoc + "<br>" + "A. Which family Members are enrolled in Medicaid or CHIP." + "<br>" + "B. Date the Medicaid or CHIP began." + "<br>" + "C. Date the notice was generated and/or mailed to the customer. Issue reported within 60 days of receipt of eligibility notice from Mediciad or CHIP.";
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -419,7 +421,7 @@ function generateOutput() {
 
             subjectText += "Broker Unable to Access Account";
                 
-            outputText += "Broker " + brokername + " called in due to being locked out of their account. I checked under users to make sure the account is active and provided broker with their security answer to reset password. The reset was unsuccessful. Confirmed broker's login email address is " + brokeremail + ".";
+            outputText += "Broker " + brokername + " called in due to being locked out of their account. I checked under users to make sure the account is active and provided broker with their security answer to reset password. The reset was unsuccessful. Confirmed broker's login email address is " + brokeremail + "." + "<br><br>" + "Callback Number: " + brokernum;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -430,7 +432,7 @@ function generateOutput() {
 
             subjectText += "Assister Unable to Access Account";
                 
-            outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. Assister is still having trouble resetting the password on their own. Confirmed assister's login email address is " + assisteremail + ".";
+            outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. Assister is still having trouble resetting the password on their own. Confirmed assister's login email address is " + assisteremail + "." + "<br><br>" + "Callback Number: " + assisternum;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -523,9 +525,9 @@ function generateOutput() {
             break;
                 
         case 'remove':
-            ticTypeText += "";
-            ticSubText += "";
-            ticPriorityText += "";
+            ticTypeText += "JIRA";
+            ticSubText += "DNC";
+            ticPriorityText += "Critical";
 
             subjectText += "Pennie Account Removal";	
                 

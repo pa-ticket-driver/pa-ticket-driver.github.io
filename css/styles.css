@@ -228,6 +228,10 @@ button#clear-button {
     display: none;
 }
 
+#noteshide.hidden {
+    display: none;
+}
+
 .question-set label {
     margin-top: 10px;
 }

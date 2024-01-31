@@ -810,8 +810,14 @@
 			</div>
 
 			<div class="notes" id="notesSection">
-				<label for="notesField">Additional Notes:</label>
-				<textarea id="notesField" name="notesField"></textarea>
+				<label for="addnotes">Do you have additional notes?
+					<input type="checkbox" id="addnotes" name="addnotes" onClick="toggleAddNotes()">
+				</label>
+			
+				<div id="noteshide" class="hidden">
+					<label for="notesField">Additional Notes:</label>
+					<textarea id="notesField" name="notesField"></textarea>
+				</div>
 			</div>
 
 			<div class="formButtons">

@@ -601,13 +601,16 @@
 			
 			<div class="question-set" id="errorQuestions">
 				<h4>Instructions:</h4>
-				<h5>Only use when you've tried all known workarounds and steps in CAP Guide.</h5>
+				<h5>Only use when you've tried all known workarounds and steps in CAP Guide. Refer to your team chat to establish if a screenshot of the issue should be included in the ticket.</h5>
 				
 				<label for="errormessage">Error message the customer is receiving:</label>
 				<textarea id="errormessage" name="errormessage"></textarea>
 				
 				<label for="errorsteps">List the steps to get to the error message:</label>
 				<textarea id="errorsteps" name="errorsteps"></textarea>
+
+				<label for="errorss">A screenshot of the issue will be attached to the ticket: 
+					<input type="checkbox" id="errorss" name="errorss" onclick="toggleErrorSs()"></label>
 			</div>
 			
 			<div class="question-set" id="ropQuestions">

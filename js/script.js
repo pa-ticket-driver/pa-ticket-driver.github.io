@@ -237,6 +237,7 @@ function generateOutput() {
     toggleEnfRep();
     toggleCnfRep();
     toggleTnfRep();
+    toggleErrorSs()
     
     if (questionSet) {
         var outputText = "";
@@ -468,7 +469,7 @@ function generateOutput() {
 
             subjectText += "Technical Issue";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with their account. Customer reported they're receiving this error: " + errormessage + ". I tried this on my end and received the same error message." + "<br><br>" + "The steps to get to the error message are: " + errorsteps + "<br><br>" + "A screenshot has also been attached showing the error.";
+            outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with their account. Customer reported they're receiving this error: " + errormessage + ". I tried this on my end and received the same error message." + "<br><br>" + "The steps to get to the error message are: " + errorsteps + errorScreenshot;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -699,6 +700,17 @@ function toggleEnfRep() {
     } else {
         enfRepresentative = '';
         document.getElementById('enfrephide').classList.add('hidden');
+    }
+}
+
+function toggleErrorSs() {
+    var errorSsCheckbox = document.getElementById('errorss');
+    var errorSs = errorSsCheckbox.checked;
+
+    if (errorSs) {
+        errorScreenshot = "<br><br>" + "A screenshot of the issue has been attached to this ticket.";
+    } else {
+        errorScreenshot = '';
     }
 }
 

@@ -382,7 +382,7 @@ function generateOutput() {
 
             subjectText += "Apply APTC Request";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") is requesting APTC to be applied to theri enrollment " + aptccarrier + ": " + aptcplan + " with the Policy ID# (" + aptcpolicy + "). APTC amount is $" + aptcamount + " and should be applied to the customer's account based off their application date. The APTC needs to be applied because " + aptcwhy + "<br><br>" + "Application ID: " + aptcapp;
+            outputText += firstLast + " (ID:" + hhidField + ") is requesting APTC to be applied to their enrollment " + aptccarrier + ": " + aptcplan + " with the Policy ID# (" + aptcpolicy + "). APTC amount is $" + aptcamount + " and should be applied to the customer's account based off their application date. The APTC needs to be applied because " + aptcwhy + "<br><br>" + "Application Case Number: " + aptcapp;
             outputText += additionalNotes;
             break;
                 
@@ -415,7 +415,7 @@ function generateOutput() {
 
             subjectText += "Verification Error";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in stating their dashboard is requesting documents, but when clicking on upload documents, everything is showing verified. I tried this on my end and receive the same result as the customer." + "<br><br>" + "Other troubleshooting included: " + verificationsteps;
+            outputText += firstLast + " (ID:" + hhidField + ") called in stating their dashboard is requesting documents, but when clicking on upload documents, everything is showing verified. I tried this on my end and received the same result as the customer." + "<br><br>" + "Other troubleshooting included: " + verificationsteps;
             outputText += additionalNotes;
             break;
                 
@@ -426,7 +426,7 @@ function generateOutput() {
 
             subjectText += "Broker Unable to Access Account";
                 
-            outputText += "Broker " + brokername + " called in due to being locked out of their account. I checked under users to make sure the account is active and provided broker with their security answer to reset password. The reset was unsuccessful. Confirmed broker's login email address is " + brokeremail + "." + "<br><br>" + "Callback Number: " + brokernum;
+            outputText += "Broker " + brokername + " called in due to being locked out of their account. I checked under users to make sure the account is active and provided the broker with their security answer to reset their password. The reset was unsuccessful. Confirmed the broker's login email address is " + brokeremail + "<br><br>" + "Callback Number: " + brokernum;
             outputText += additionalNotes;
             break;
                 
@@ -437,7 +437,7 @@ function generateOutput() {
 
             subjectText += "Assister Unable to Access Account";
                 
-            outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. Assister is still having trouble resetting the password on their own. Confirmed assister's login email address is " + assisteremail + "." + "<br><br>" + "Callback Number: " + assisternum;
+            outputText += "Assister " + assistername + " called in due to being locked out of their account. I checked under users to make sure the account is active. The assister is still having trouble resetting their password on their own. Confirmed assister's login email address is " + assisteremail + "<br><br>" + "Callback Number: " + assisternum;
             outputText += additionalNotes;
             break;
                 
@@ -448,7 +448,7 @@ function generateOutput() {
 
             subjectText += "1095-A Correction";
                 
-            outputText += firstLast + " (ID:" + hhidField + ")'s 1095-A Tax Form need to be corrected for Policy ID# (" + taxpolicy + "): " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
+            outputText += firstLast + "'s (ID:" + hhidField + ") 1095-A Tax Form needs the following corrected for Policy ID# (" + taxpolicy + "): " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
             outputText += additionalNotes;
             break;
                 

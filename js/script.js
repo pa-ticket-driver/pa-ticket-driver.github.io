@@ -234,6 +234,7 @@ function generateOutput() {
     toggleText();
     toggleTextAble();
     toggleTextJira();
+    toggleEnfRep();
     
     if (questionSet) {
         var outputText = "";
@@ -256,7 +257,7 @@ function generateOutput() {
 
             subjectText += "Enrollment Not Found: " + enfcarrier;	
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates;
+            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + "<br><br>" + enfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -682,6 +683,20 @@ function toggleTextJira() {
         textJiraText = "has not";
         document.getElementById('textjirahide').classList.add('hidden');
         textJiraNum = '';
+    }
+}
+
+function toggleEnfRep() {
+    var enfRepCheckbox = document.getElementById('enfrep');
+    var enfRepName = document.getElementById('enfrepname');
+    var enfRep = enfRepCheckbox.checked;
+
+    if (enfRep) {
+        enfRepresentative = "Carrier Representative's name: " + enfRepName.value;
+        document.getElementById('enfrephide').classList.remove('hidden');
+    } else {
+        enfRepresentative = '';
+        document.getElementById('enfrephide').classList.add('hidden');
     }
 }
 

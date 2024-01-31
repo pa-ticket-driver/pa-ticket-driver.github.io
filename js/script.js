@@ -440,11 +440,11 @@ function generateOutput() {
             break;
                 
         case 'tax':
-            ticTypeText += "1095-A";
-            ticSubText += "1095-A";
+            ticTypeText += "1095-A Request";
+            ticSubText += "1095-A Request";
             ticPriorityText += "Medium";
 
-            subjectText += "1095-A Tax Correction";
+            subjectText += "1095-A Correction";
                 
             outputText += firstLast + " (ID:" + hhidField + ")'s 1095-A Tax Form need to be corrected for Policy ID# (" + taxpolicy + "): " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
             outputText += "<br><br>" + "Additional Notes: " + notesField;

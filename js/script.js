@@ -235,6 +235,7 @@ function generateOutput() {
     toggleTextAble();
     toggleTextJira();
     toggleEnfRep();
+    toggleCnfRep();
     
     if (questionSet) {
         var outputText = "";
@@ -268,7 +269,7 @@ function generateOutput() {
 
             subjectText += "Cancellation Not Found: " + cnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates;
+            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + "<br><br>" + cnfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -697,6 +698,20 @@ function toggleEnfRep() {
     } else {
         enfRepresentative = '';
         document.getElementById('enfrephide').classList.add('hidden');
+    }
+}
+
+function toggleCnfRep() {
+    var cnfRepCheckbox = document.getElementById('cnfrep');
+    var cnfRepName = document.getElementById('cnfrepname');
+    var cnfRep = cnfRepCheckbox.checked;
+
+    if (cnfRep) {
+        cnfRepresentative = "Carrier Representative's name: " + cnfRepName.value;
+        document.getElementById('cnfrephide').classList.remove('hidden');
+    } else {
+        cnfRepresentative = '';
+        document.getElementById('cnfrephide').classList.add('hidden');
     }
 }
 

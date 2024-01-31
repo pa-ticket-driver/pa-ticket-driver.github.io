@@ -216,6 +216,10 @@ button#clear-button {
     display: none;
 }
 
+#cnfrephide.hidden {
+    display: none;
+}
+
 .question-set label {
     margin-top: 10px;
 }

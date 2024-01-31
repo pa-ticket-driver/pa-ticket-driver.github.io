@@ -364,7 +364,7 @@ function generateOutput() {
             ticSubText += "Triage";
             ticPriorityText += "Medium";
 
-            subjectText += "Backdate Termination Request: " + backdatecarrier;
+            subjectText += "Backdate Termination Request";
                 
             outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID# (" + backdatepolicy + ") to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + "<br><br>" + "If applicable, customer's other coverage will be starting on: " + backdatestart;
             outputText += "<br><br>" + "Additional Notes: " + notesField;

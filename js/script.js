@@ -614,7 +614,7 @@ function generateOutput() {
 
         case 'revdor':
             ticTypeText += "P2P Ticket";
-            ticSubText += "REV-1882 Not Avail (Not Supported-DOW)";
+            ticSubText += "REV-1882 Not Avail (Not Supported-DOR)";
             ticPriorityText += "Medium";
 
             subjectText += "Path to Pennie SEP";	

@@ -749,7 +749,7 @@ function toggleReinstateRep() {
     var reinstateRep = reinstateRepCheckbox.checked;
 
     if (reinstateRep) {
-        reinstateRepresentative = "<br><br>" + "Carrier Representative's name: " + reinstateRepName.value;
+        reinstateRepresentative = "<br><br>" + "Carrier Representative " + reinstateRepName.value + " was also on the line. Customer and carrier rep were advised that reinstatement must go to carrier team and may or may not be granted. Final determination will occur once the ticket is processed.";
         document.getElementById('reinstaterephide').classList.remove('hidden');
     } else {
         reinstateRepresentative = '';

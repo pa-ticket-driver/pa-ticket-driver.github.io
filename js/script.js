@@ -380,7 +380,7 @@ function generateOutput() {
 
             subjectText += "Apply APTC Request";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") is requesting APTC to be applied to theri enrollment " + aptccarrier + ": " + aptcplan + " with the Policy ID# (" + aptcpolicy + "). APTC amount is $" + aptcamount + " and should be applied to the customer's account based off their application date. The APTC needs to be applied because " + aptcwhy + "<be><br>" + "Application ID: " + aptcapp;
+            outputText += firstLast + " (ID:" + hhidField + ") is requesting APTC to be applied to theri enrollment " + aptccarrier + ": " + aptcplan + " with the Policy ID# (" + aptcpolicy + "). APTC amount is $" + aptcamount + " and should be applied to the customer's account based off their application date. The APTC needs to be applied because " + aptcwhy + "<br><br>" + "Application ID: " + aptcapp;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 

@@ -220,6 +220,10 @@ button#clear-button {
     display: none;
 }
 
+#tnfrephide.hidden {
+    display: none;
+}
+
 .question-set label {
     margin-top: 10px;
 }

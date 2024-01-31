@@ -236,6 +236,7 @@ function generateOutput() {
     toggleTextJira();
     toggleEnfRep();
     toggleCnfRep();
+    toggleTnfRep();
     
     if (questionSet) {
         var outputText = "";
@@ -258,7 +259,7 @@ function generateOutput() {
 
             subjectText += "Enrollment Not Found: " + enfcarrier;	
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + "<br><br>" + enfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + enfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -269,7 +270,7 @@ function generateOutput() {
 
             subjectText += "Cancellation Not Found: " + cnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + "<br><br>" + cnfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + cnfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -280,7 +281,7 @@ function generateOutput() {
 
             subjectText += "Termination Not Found: " + tnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + tnfcarrier + " shows Policy ID# (" + tnfpolicy + ") and " + tnfplan + " for Member ID# (" + tnfmember + ") as " + tnfcarrierstatus + " on their end, but this plan shows " + tnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + tnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + tnfdob + "<br>" + "Full Address: " + tnfaddress + "<br>" + "Last four digits of SSN: " + tnfssn + "<br>" + "Enrollment Premium Amount: " + tnftotalpremium + "<br>" + "APTC: " + tnfaptc + "<br>" + "Net Premium: " + tnfnet + "<br>" + "Effective Dates: " + tnfdates;
+            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + tnfcarrier + " shows Policy ID# (" + tnfpolicy + ") and " + tnfplan + " for Member ID# (" + tnfmember + ") as " + tnfcarrierstatus + " on their end, but this plan shows " + tnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + tnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + tnfdob + "<br>" + "Full Address: " + tnfaddress + "<br>" + "Last four digits of SSN: " + tnfssn + "<br>" + "Enrollment Premium Amount: " + tnftotalpremium + "<br>" + "APTC: " + tnfaptc + "<br>" + "Net Premium: " + tnfnet + "<br>" + "Effective Dates: " + tnfdates + tnfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -693,7 +694,7 @@ function toggleEnfRep() {
     var enfRep = enfRepCheckbox.checked;
 
     if (enfRep) {
-        enfRepresentative = "Carrier Representative's name: " + enfRepName.value;
+        enfRepresentative = "<br><br>" + "Carrier Representative's name: " + enfRepName.value;
         document.getElementById('enfrephide').classList.remove('hidden');
     } else {
         enfRepresentative = '';
@@ -707,11 +708,25 @@ function toggleCnfRep() {
     var cnfRep = cnfRepCheckbox.checked;
 
     if (cnfRep) {
-        cnfRepresentative = "Carrier Representative's name: " + cnfRepName.value;
+        cnfRepresentative = "<br><br>" + "Carrier Representative's name: " + cnfRepName.value;
         document.getElementById('cnfrephide').classList.remove('hidden');
     } else {
         cnfRepresentative = '';
         document.getElementById('cnfrephide').classList.add('hidden');
+    }
+}
+
+function toggleTnfRep() {
+    var tnfRepCheckbox = document.getElementById('tnfrep');
+    var tnfRepName = document.getElementById('tnfrepname');
+    var tnfRep = tnfRepCheckbox.checked;
+
+    if (tnfRep) {
+        tnfRepresentative = "<br><br>" + "Carrier Representative's name: " + tnfRepName.value;
+        document.getElementById('tnfrephide').classList.remove('hidden');
+    } else {
+        tnfRepresentative = '';
+        document.getElementById('tnfrephide').classList.add('hidden');
     }
 }
 

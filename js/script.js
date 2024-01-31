@@ -309,7 +309,7 @@ function generateOutput() {
                 
         case 'reinstatement':
             ticTypeText += "Issuer";
-            ticSubText += "Insurer";
+            ticSubText += "Insurer - Billing Issues";
             ticPriorityText += "Medium";
 
             subjectText += "Reinstatement Request: " + reinstatecarrier;
@@ -419,7 +419,7 @@ function generateOutput() {
                 
         case 'broker':
             ticTypeText += "Broker";
-            ticSubText += "Broker";
+            ticSubText += "Account Access";
             ticPriorityText += "Medium";
 
             subjectText += "Broker Unable to Access Account";
@@ -430,7 +430,7 @@ function generateOutput() {
                 
         case 'assister':
             ticTypeText += "Assister";
-            ticSubText += "Assister";
+            ticSubText += "Account Access";
             ticPriorityText += "Medium";
 
             subjectText += "Assister Unable to Access Account";
@@ -485,7 +485,7 @@ function generateOutput() {
                 
         case 'posappeal':
             ticTypeText += "Complaint";
-            ticSubText += "Eligibility (customer) or Other (customer)";
+            ticSubText += "Eligibility (other customer) or Other (customer caller)";
             ticPriorityText += "Medium";
 
             subjectText += "Complaint - Possible Appeal";
@@ -496,7 +496,7 @@ function generateOutput() {
                 
         case 'nonappeal':
             ticTypeText += "Complaint";
-            ticSubText += "Eligibility (customer) or Other (customer)";
+            ticSubText += "Eligibility (other customer) or Other (customer caller)";
             ticPriorityText += "Medium";
 
             subjectText += "Complaint - Non-Appealable";

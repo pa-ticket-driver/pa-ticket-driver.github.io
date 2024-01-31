@@ -237,7 +237,8 @@ function generateOutput() {
     toggleEnfRep();
     toggleCnfRep();
     toggleTnfRep();
-    toggleErrorSs()
+    toggleErrorSs();
+    toggleReinstateRep();
     
     if (questionSet) {
         var outputText = "";
@@ -260,7 +261,7 @@ function generateOutput() {
 
             subjectText += "Enrollment Not Found: " + enfcarrier;	
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + enfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ") stated that " + enfcarrier + " shows Policy ID# (" + enfpolicy + ") and " + enfplan + " for Member ID# (" + enfmember + ") as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + enfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -271,7 +272,7 @@ function generateOutput() {
 
             subjectText += "Cancellation Not Found: " + cnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + cnfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ") stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + cnfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -282,7 +283,7 @@ function generateOutput() {
 
             subjectText += "Termination Not Found: " + tnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ")" + " stated that " + tnfcarrier + " shows Policy ID# (" + tnfpolicy + ") and " + tnfplan + " for Member ID# (" + tnfmember + ") as " + tnfcarrierstatus + " on their end, but this plan shows " + tnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + tnfoutcome + "." + "<br>" + "<br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + tnfdob + "<br>" + "Full Address: " + tnfaddress + "<br>" + "Last four digits of SSN: " + tnfssn + "<br>" + "Enrollment Premium Amount: " + tnftotalpremium + "<br>" + "APTC: " + tnfaptc + "<br>" + "Net Premium: " + tnfnet + "<br>" + "Effective Dates: " + tnfdates + tnfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ") stated that " + tnfcarrier + " shows Policy ID# (" + tnfpolicy + ") and " + tnfplan + " for Member ID# (" + tnfmember + ") as " + tnfcarrierstatus + " on their end, but this plan shows " + tnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + tnfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + tnfdob + "<br>" + "Full Address: " + tnfaddress + "<br>" + "Last four digits of SSN: " + tnfssn + "<br>" + "Enrollment Premium Amount: " + tnftotalpremium + "<br>" + "APTC: " + tnfaptc + "<br>" + "Net Premium: " + tnfnet + "<br>" + "Effective Dates: " + tnfdates + tnfRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
                 
@@ -315,7 +316,7 @@ function generateOutput() {
 
             subjectText += "Reinstatement Request: " + reinstatecarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Full Address" + reinstateaddress + "<br>" + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment " + reinstatecarrier + ": " + reinstateplan + " for Policy ID# (" + reinstatepolicy + ") to be reinstated. Plan was cancelled due to " + reinstatereason + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB :" + reinstatedob + "<br>" + "Full Address" + reinstateaddress + "<br>" + "Last four digits of SSN: " + reinstatessn + "<br>" + "Enrollment Premium Amount: " + reinstatepremium + "<br>" + "APTC: " + reinstateaptc + "<br>" + "Net Premium: " + reinstatenet + reinstateRepresentative;
             outputText += "<br><br>" + "Additional Notes: " + notesField;
             break;
         
@@ -739,6 +740,20 @@ function toggleTnfRep() {
     } else {
         tnfRepresentative = '';
         document.getElementById('tnfrephide').classList.add('hidden');
+    }
+}
+
+function toggleReinstateRep() {
+    var reinstateRepCheckbox = document.getElementById('reinstaterep');
+    var reinstateRepName = document.getElementById('reinstaterepname');
+    var reinstateRep = reinstateRepCheckbox.checked;
+
+    if (reinstateRep) {
+        reinstateRepresentative = "<br><br>" + "Carrier Representative's name: " + reinstateRepName.value;
+        document.getElementById('reinstaterephide').classList.remove('hidden');
+    } else {
+        reinstateRepresentative = '';
+        document.getElementById('reinstaterephide').classList.add('hidden');
     }
 }
 

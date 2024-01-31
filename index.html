@@ -341,6 +341,15 @@
 				
 				<label for="reinstatenet">Net Premium:</label>
 				<input type="text" id="reinstatenet" name="reinstatenet">
+
+				<label for="reinstaterep">A Carrier Representative was on the line:
+					<input type="checkbox" id="reinstaterep" name="reinstaterep" onClick="toggleReinstateRep()">
+				</label>
+			
+				<div id="reinstaterephide" class="hidden">
+					<label for="reinstaterepname">Carrier Representative's Name:</label>
+					<input type="text" id="reinstaterepname" name="reinstaterepname">
+				</div>
             </div>
 			
 			<div class="question-set" id="enstatusQuestions">

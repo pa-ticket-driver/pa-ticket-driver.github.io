@@ -205,6 +205,7 @@ function generateOutput() {
     var posappealescalate = document.getElementById('posappealescalate').value;
     var posappealscaller = document.getElementById('posappealscaller').value;
     var posappealscallback = document.getElementById('posappealscallback').value;
+    var posappealhours = document.getElementById('posappealhours').value;
     
     var nonappealreason = document.getElementById('nonappealreason').value;
     var nonappealfirst = document.getElementById('nonappealfirst').value;
@@ -212,6 +213,7 @@ function generateOutput() {
     var nonappealescalate = document.getElementById('nonappealescalate').value;
     var nonappealscaller = document.getElementById('nonappealscaller').value;
     var nonappealscallback = document.getElementById('nonappealscallback').value;
+    var nonappealhours = document.getElementById('nonappealhours').value;
     
     var removereason = document.getElementById('removereason').value;
     
@@ -460,7 +462,7 @@ function generateOutput() {
 
             subjectText += "HH with 26-year-old Dependant";
                 
-            outputText += "This issue has been reviewed by TL/SUP: " + oversup + "<br><br>" + firstLast + " (ID:" + hhidField + ") has 26-year-old dependent on enrollment " + overpolicy + ". This dependent " + overdependant + " has been removed from previous enrollments on this account effective 1/1 and added to a plan of their own effective 1/1.";
+            outputText += "This issue has been reviewed by TL/SUP: " + oversup + "<br><br>" + firstLast + " (ID:" + hhidField + ") has 26-year-old dependent on enrollment (Policy ID#" + overpolicy + "). This dependent " + overdependant + " has been removed from previous enrollments on this account effective 1/1 and added to a plan of their own effective 1/1.";
             outputText += additionalNotes;
             break;
                 
@@ -493,7 +495,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Possible Appeal";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. the customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Caller: " + posappealscaller + "<br>" + "Callback Number: " + posappealscallback;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal due to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Please reach out to " + posappealscaller + " at " + posappealscallback + " between the hours of " + posappealhours;
             outputText += additionalNotes;
             break;
                 
@@ -504,7 +506,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Non-Appealable";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. the customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Caller: " + nonappealscaller + "<br>" + "Callback Number: " + nonappealscallback;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Please reach out to " + nonappealscaller + " at " + nonappealscallback + " between the hours of " + nonappealhours;
             outputText += additionalNotes;
             break;
                 

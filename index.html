@@ -657,9 +657,15 @@
 				
 				<label for="posappealoutcome">Customer's Desired Outcome:</label>
 				<textarea id="posappealoutcome" name="posappealoutcome"></textarea>
+
+				<label for="posescalate">The call was escalated:
+						<input type="checkbox" id="posescalate" name="posescalate" onClick="togglePosEscalate()">
+				</label>
 				
-				<label for="posappealescalate">If escated, names of Pennie CSR's involved:</label>
-				<input type="text" id="posappealescalate" name="posappealescalate">
+				<div id="posescalatehide">
+					<label for="posnames">Names of Pennie CSR's involved with escalation:</label>
+					<input type="text" id="posnames" name="posnames">
+				</div>
 
 				<label for="posappealres">Resolution you propose:</label>
 				<textarea id="posappealres" name="posappealres"></textarea>
@@ -687,9 +693,15 @@
 				<label for="nonappealoutcome">Customer's Desired Outcome:</label>
 				<textarea id="nonappealoutcome" name="nonappealoutcome"></textarea>
 				
-				<label for="nonappealescalate">If escated, names of Pennie CSR's involved:</label>
-				<input type="text" id="nonappealescalate" name="nonappealescalate">
-
+				<label for="nonescalate">The call was escalated:
+					<input type="checkbox" id="nonescalate" name="nonescalate" onClick="toggleNonEscalate()">
+				</label>
+				
+				<div id="nonescalatehide">
+					<label for="nonnames">Names of Pennie CSR's involved with escalation:</label>
+					<input type="text" id="nonnames" name="nonnames">
+				</div>
+				
 				<label for="nonappealres">Resolution you propose:</label>
 				<textarea id="nonappealres" name="nonappealres"></textarea>
 				

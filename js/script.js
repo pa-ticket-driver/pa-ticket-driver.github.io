@@ -202,7 +202,6 @@ function generateOutput() {
     var posappealreason = document.getElementById('posappealreason').value;
     var posappealfirst = document.getElementById('posappealfirst').value;
     var posappealoutcome = document.getElementById('posappealoutcome').value;
-    var posappealescalate = document.getElementById('posappealescalate').value;
     var posappealres = document.getElementById('posappealres').value;
     var posappealscaller = document.getElementById('posappealscaller').value;
     var posappealscallback = document.getElementById('posappealscallback').value;
@@ -211,7 +210,6 @@ function generateOutput() {
     var nonappealreason = document.getElementById('nonappealreason').value;
     var nonappealfirst = document.getElementById('nonappealfirst').value;
     var nonappealoutcome = document.getElementById('nonappealoutcome').value;
-    var nonappealescalate = document.getElementById('nonappealescalate').value;
     var nonappealres = document.getElementById('nonappealres').value;
     var nonappealscaller = document.getElementById('nonappealscaller').value;
     var nonappealscallback = document.getElementById('nonappealscallback').value;
@@ -244,6 +242,8 @@ function generateOutput() {
     toggleErrorSs();
     toggleReinstateRep();
     toggleAddNotes();
+    togglePosEscalate();
+    toggleNonEscalate();
     
     if (questionSet) {
         var outputText = "";
@@ -497,7 +497,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Possible Appeal";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal due to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Resolution you proposed: " + posappealres + "<br><br>" + "Please reach out to " + posappealscaller + " at " + posappealscallback + " between the hours of " + posappealhours;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal due to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + posappealoutcome + "." + posEscalated + "<br><br>" + "Resolution you proposed: " + posappealres + "<br><br>" + "Please reach out to " + posappealscaller + " at " + posappealscallback + " between the hours of " + posappealhours;
             outputText += additionalNotes;
             break;
                 
@@ -508,7 +508,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Non-Appealable";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Resolution you proposed: " + nonappealres + "<br><br>" + "Please reach out to " + nonappealscaller + " at " + nonappealscallback + " between the hours of " + nonappealhours;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + nonappealoutcome + "." + nonEscalated + "<br><br>" + "Resolution you proposed: " + nonappealres + "<br><br>" + "Please reach out to " + nonappealscaller + " at " + nonappealscallback + " between the hours of " + nonappealhours;
             outputText += additionalNotes;
             break;
                 
@@ -745,6 +745,34 @@ function toggleTnfRep() {
     } else {
         tnfRepresentative = '';
         document.getElementById('tnfrephide').classList.add('hidden');
+    }
+}
+
+function togglePosEscalate() {
+    var posEscalateCheckbox = document.getElementById('posescalate');
+    var posNames = document.getElementById('posnames');
+    var posEscalateNames = posEscalateCheckbox.checked;
+
+    if (posEscalateNames) {
+        posEscalated = "<br><br>" + "The call was escalated and handled by the following CSR(s):" + "<br>" + posNames.value;
+        document.getElementById('posescalatehide').classList.remove('hidden');
+    } else {
+        posEscalated = '';
+        document.getElementById('posescalatehide').classList.add('hidden');
+    }
+}
+
+function toggleNonEscalate() {
+    var nonEscalateCheckbox = document.getElementById('nonescalate');
+    var nonNames = document.getElementById('nonnames');
+    var nonEscalateNames = nonEscalateCheckbox.checked;
+
+    if (nonEscalateNames) {
+        nonEscalated = "<br><br>" + "The call was escalated and handled by the following CSR(s):" + "<br>" + nonNames.value;
+        document.getElementById('nonescalatehide').classList.remove('hidden');
+    } else {
+        nonEscalated = '';
+        document.getElementById('nonescalatehide').classList.add('hidden');
     }
 }
 

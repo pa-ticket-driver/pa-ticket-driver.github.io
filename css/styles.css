@@ -232,6 +232,14 @@ button#clear-button {
     display: none;
 }
 
+#posescalatehide.hidden {
+    display: none;
+}
+
+#nonescalatehide.hidden {
+    display: none;
+}
+
 .question-set label {
     margin-top: 10px;
 }

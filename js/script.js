@@ -180,6 +180,7 @@ function generateOutput() {
     
     var overpolicy = document.getElementById('overpolicy').value;
     var overdependant = document.getElementById('overdependant').value;
+    var oversup = document.getElementById('oversup').value;
     
     var errormessage = document.getElementById('errormessage').value;
     var errorsteps = document.getElementById('errorsteps').value;
@@ -459,7 +460,7 @@ function generateOutput() {
 
             subjectText += "HH with 26-year-old Dependant";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") has 26-year-old dependent on enrollment " + overpolicy + ". This dependent " + overdependant + " has been removed from previous enrollments on this account effective 1/1 and added to a plan of their own effective 1/1.";
+            outputText += "This issue has been reviewed by TL/SUP: " + oversup + "<br><br>" + firstLast + " (ID:" + hhidField + ") has 26-year-old dependent on enrollment " + overpolicy + ". This dependent " + overdependant + " has been removed from previous enrollments on this account effective 1/1 and added to a plan of their own effective 1/1.";
             outputText += additionalNotes;
             break;
                 

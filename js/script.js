@@ -203,6 +203,7 @@ function generateOutput() {
     var posappealfirst = document.getElementById('posappealfirst').value;
     var posappealoutcome = document.getElementById('posappealoutcome').value;
     var posappealescalate = document.getElementById('posappealescalate').value;
+    var posappealres = document.getElementById('posappealres').value;
     var posappealscaller = document.getElementById('posappealscaller').value;
     var posappealscallback = document.getElementById('posappealscallback').value;
     var posappealhours = document.getElementById('posappealhours').value;
@@ -211,6 +212,7 @@ function generateOutput() {
     var nonappealfirst = document.getElementById('nonappealfirst').value;
     var nonappealoutcome = document.getElementById('nonappealoutcome').value;
     var nonappealescalate = document.getElementById('nonappealescalate').value;
+    var nonappealres = document.getElementById('nonappealres').value;
     var nonappealscaller = document.getElementById('nonappealscaller').value;
     var nonappealscallback = document.getElementById('nonappealscallback').value;
     var nonappealhours = document.getElementById('nonappealhours').value;
@@ -495,7 +497,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Possible Appeal";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal due to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Please reach out to " + posappealscaller + " at " + posappealscallback + " between the hours of " + posappealhours;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal due to " + posappealreason + ". The customer was informed " + posappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + posappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + posappealescalate + "<br><br>" + "Resolution you proposed: " + posappealres + "<br><br>" + "Please reach out to " + posappealscaller + " at " + posappealscallback + " between the hours of " + posappealhours;
             outputText += additionalNotes;
             break;
                 
@@ -506,7 +508,7 @@ function generateOutput() {
 
             subjectText += "Complaint - Non-Appealable";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Please reach out to " + nonappealscaller + " at " + nonappealscallback + " between the hours of " + nonappealhours;
+            outputText += firstLast + " (ID:" + hhidField + ") mentioned filing an appeal to " + nonappealreason + ". The customer was informed " + nonappealfirst + ". I have followed the appeal escalation process. The customer's desired outcome is " + nonappealoutcome + "." + "<br><br>" + "Pennie representatives who assisted with escalation:" + "<br>" + nonappealescalate + "<br><br>" + "Resolution you proposed: " + nonappealres + "<br><br>" + "Please reach out to " + nonappealscaller + " at " + nonappealscallback + " between the hours of " + nonappealhours;
             outputText += additionalNotes;
             break;
                 

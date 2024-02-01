@@ -145,7 +145,6 @@ function generateOutput() {
     var backdatepolicy = document.getElementById('backdatepolicy').value;
     var backdatedate = document.getElementById('backdatedate').value;
     var backdatereason = document.getElementById('backdatereason').value;
-    var backdatestart = document.getElementById('backdatestart').value;
     
     var aptccarrier = document.getElementById('aptccarrier').value;
     var aptcplan = document.getElementById('aptcplan').value;
@@ -244,6 +243,7 @@ function generateOutput() {
     toggleAddNotes();
     togglePosEscalate();
     toggleNonEscalate();
+    toggleBackdateOther();
     
     if (questionSet) {
         var outputText = "";
@@ -255,7 +255,7 @@ function generateOutput() {
         questionSet.querySelectorAll('input[type="text"]').forEach(function (input) {
             var question = input.previousElementSibling.innerText.replace(':', '').trim();
             var answer = input.value;
-            
+        
         });
         
         switch (selectedOption) {
@@ -376,7 +376,7 @@ function generateOutput() {
 
             subjectText += "Backdate Termination Request";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID# (" + backdatepolicy + ") to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + "<br><br>" + "If applicable, customer's other coverage will be starting on: " + backdatestart;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID# (" + backdatepolicy + ") to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + otherCoverageStart;
             outputText += additionalNotes;
             break;
                 
@@ -787,6 +787,21 @@ function toggleReinstateRep() {
     } else {
         reinstateRepresentative = '';
         document.getElementById('reinstaterephide').classList.add('hidden');
+    }
+}
+
+function toggleBackdateOther() {
+    var backdateOtherCheckbox = document.getElementById('backdateother');
+    var backdateStart = document.getElementById('backdatestart');
+    var backdateType = document.getElementById('backdatetype');
+    var otherCoverage = backdateOtherCheckbox.checked;
+
+    if (otherCoverage) {
+        otherCoverageStart = "<br><br>" + "The customer's other " + backdateType.value + " will be going into effect starting " + backdateStart.value + ". The customer has also been advised that they will need to submit documentation regarding their other coverage.";
+        document.getElementById('backdatehide').classList.remove('hidden');
+    } else {
+        otherCoverageStart = '';
+        document.getElementById('backdatehide').classList.add('hidden');
     }
 }
 

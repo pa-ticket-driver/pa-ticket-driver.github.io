@@ -459,9 +459,18 @@
 				
 				<label for="backdatereason">Reason for termination:</label>
 				<input type="text" id="backdatereason" name="backdatereason">
-				
-				<label for="backdatestart">Start date of other coverage, if applicable:</label>
-				<input type="text" id="backdatestart" name="backdatestart">
+
+				<label for="backdateother">The consumer has other coverage:
+					<input type="checkbox" id="backdateother" name="backdateother" onClick="toggleBackdateOther()">
+				</label>
+			
+				<div id="backdatehide" class="hidden">
+					<label for="backdatetype">Type of other coverage:</label>
+					<input type="text" id="backdatetype" name="backdatetype">
+
+					<label for="backdatestart">Start date of other coverage:</label>
+					<input type="text" id="backdatestart" name="backdatestart">
+				</div>
 			</div>
 			
 			<div class="question-set" id="aptcQuestions">

@@ -825,8 +825,12 @@ function clearForm() {
     var inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="checkbox"], select, textarea');
     
     inputs.forEach(function (input) {
-        input.value = '';
-    });
+        if (input.type === 'checkbox') {
+            input.checked = false;
+        } else {
+            input.value = '';
+        }
+    });    
     
     document.getElementById('firstLast').value = '';
     document.getElementById('nameSection').style.display = 'none';

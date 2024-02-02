@@ -229,8 +229,10 @@ function generateOutput() {
     var highcallnumber = document.getElementById('highcallnumber').value;
 
     var revvendortax = document.getElementById('revvendortax').value;
+    var revvendorissue = document.getElementById('revvendorissue').value;
 
     var revdortax = document.getElementById('revdortax').value;
+    var revdorissue = document.getElementById('revdorissue').value;
     
     toggleText();
     toggleTextAble();
@@ -618,7 +620,7 @@ function generateOutput() {
 
             subjectText += "Path to Pennie SEP";	
                 
-            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revvendortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this ticket will not be sent to DOR for validation.";
+            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revvendortax + " but " + revvendorissue + " and they verbally attested to the statement(s). Cx was advised that this ticket will not be sent to DOR for validation.";
             outputText += additionalNotes;
             break;
 
@@ -629,7 +631,7 @@ function generateOutput() {
 
             subjectText += "Path to Pennie SEP";	
                 
-            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revdortax + " but did not file the REV-1882 and/or form was unavailable to them, and they verbally attested to the statement(s). Cx was advised that this is a ticket for DOR to review their eligibility and provided with next steps to check account for once ticket is reviewed.";
+            outputText += "Cx " + firstLast + " (ID:" + hhidField + ") stated they filed their taxes with " + revdortax + " but " +revdorissue + " and they verbally attested to the statement(s). Cx was advised that this is a ticket for DOR to review their eligibility and provided with next steps to check account for once ticket is reviewed.";
             outputText += additionalNotes;
             break;
 

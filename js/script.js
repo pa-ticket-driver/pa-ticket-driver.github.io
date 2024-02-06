@@ -411,7 +411,7 @@ function generateOutput() {
 
             subjectText += "Primary/Self Switch";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in reporting there is an error on their enrollment. " + switchcx + " is incorrectly listed as " + switchwrong + " when they should be listed as SELF on the enrollment. Please investigate enrollment " + switchcarrier + ": " + switchplan + " with Policy ID# (" + switchpolicy + ")." + "<br><br>" + "Name: " + firstLast + "<br>" + "DOB: " + switchdob + "<br>" + "Full Address: " + switchaddress + "<br>" + "Last four digits of SSN: " + switchssn;
+            outputText += firstLast + " (ID:" + hhidField + ") called in reporting there is an error on their enrollment. " + switchcx + " is incorrectly listed as " + switchwrong + " when they should be listed as SELF on the enrollment. Please investigate enrollment " + switchcarrier + ": " + switchplan + " with Policy ID#" + switchpolicy + "." + "<br><br>" + "Name: " + firstLast + "<br>" + "DOB: " + switchdob + "<br>" + "Full Address: " + switchaddress + "<br>" + "Last four digits of SSN: " + switchssn;
             outputText += additionalNotes;
             break;
                 

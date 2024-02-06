@@ -15,6 +15,9 @@ function showQuestions() {
     if (selectedOption === 'broker' || selectedOption === 'assister') {
         nameSection.style.display = 'none';
         hhidSection.style.display = 'none';
+    } else if (selectedOption === 'rop') {
+        nameSection.style.display = 'none';
+        hhidSection.style.display = 'flex';
     } else {
         nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
         hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
@@ -488,7 +491,7 @@ function generateOutput() {
 
             subjectText += "Verification Document for ROP Reinstatement";
                 
-            outputText += rop1stname + " " + roplastname + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on the plan " + ropplan + " with Policy ID#" + roppolicy + " due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + rop1stname + "_" + roplastname + "_For_" + ropaptc + "_On_" + ropdate;
+            outputText += rop1stname + " " + roplastname + " (ID:" + hhidField + ") called in requesting reinstatement of the APTC amount of $" + ropaptc + " on the plan " + ropplan + " with Policy ID#" + roppolicy + " due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + rop1stname + "_" + roplastname + "_For_" + ropaptc + "_On_" + ropdate;
             outputText += additionalNotes;
             break;
                 

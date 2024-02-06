@@ -312,7 +312,7 @@ function generateOutput() {
 
             subjectText += "Billing Issues: " + billingcarrier;	
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting " + billingreason + " for enrollment " + billingcarrier + ": " + billingplan + " in the amount of $" + billingpayment + ". Customer has already contacted the carrier directly and the carrier redirected the customer to Pennie. Please investigate the billing issue for Policy ID# (" + billingpolicy + ") with Member ID# (" + billingmember + ")." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + billingdob + "<br>" + "Full Address: " + billingaddress + "<br>" + "Last four digits of SSN: " + billingssn + "<br>" + "Enrollment Premium Amount: " + billingpremium + "<br>" + "APTC: " + billingaptc + "<br>" + "Net Premium: " + billingnet;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting " + billingreason + " for enrollment " + billingcarrier + ": " + billingplan + " in the amount of $" + billingpayment + ". Customer has already contacted the carrier directly and the carrier redirected the customer to Pennie. Please investigate the billing issue for Policy ID# (" + billingpolicy + ") with Member ID#" + billingmember + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + billingdob + "<br>" + "Full Address: " + billingaddress + "<br>" + "Last four digits of SSN: " + billingssn + "<br>" + "Enrollment Premium Amount: " + billingpremium + "<br>" + "APTC: " + billingaptc + "<br>" + "Net Premium: " + billingnet;
             outputText += additionalNotes;
             break;
                 

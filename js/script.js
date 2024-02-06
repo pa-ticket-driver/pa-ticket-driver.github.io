@@ -318,7 +318,7 @@ function generateOutput() {
                 
         case 'reinstatement':
             ticTypeText += "Issuer";
-            ticSubText += "Insurer - Billing Issues";
+            ticSubText += "Insurer";
             ticPriorityText += "Medium";
 
             subjectText += "Reinstatement Request: " + reinstatecarrier;

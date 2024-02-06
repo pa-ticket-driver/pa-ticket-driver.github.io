@@ -12,7 +12,7 @@ function showQuestions() {
         questionSet.classList.add('visible');
     }
 
-    if (selectedOption === 'broker' || selectedOption === 'assister') {
+    if (selectedOption === 'broker' || selectedOption === 'assister' || selectedOption === 'overflow') {
         nameSection.style.display = 'none';
         hhidSection.style.display = 'none';
     } else if (selectedOption === 'rop') {

@@ -279,7 +279,7 @@ function generateOutput() {
 
             subjectText += "Cancellation Not Found: " + cnfcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ") stated that " + cnfcarrier + " shows Policy ID# (" + cnfpolicy + ") and " + cnfplan + " for Member ID# (" + cnfmember + ") as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + cnfRepresentative;
+            outputText += firstLast + " (ID:" + hhidField + ") stated that " + cnfcarrier + " shows Policy ID#" + cnfpolicy + " and " + cnfplan + " for Member ID#" + cnfmember + " as " + cnfcarrierstatus + " on their end, but this plan shows " + cnfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + cnfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + cnfdob + "<br>" + "Full Address: " + cnfaddress + "<br>" + "Last four digits of SSN: " + cnfssn + "<br>" + "Enrollment Premium Amount: " + cnftotalpremium + "<br>" + "APTC: " + cnfaptc + "<br>" + "Net Premium: " + cnfnet + "<br>" + "Effective Dates: " + cnfdates + cnfRepresentative;
             outputText += additionalNotes;
             break;
                 

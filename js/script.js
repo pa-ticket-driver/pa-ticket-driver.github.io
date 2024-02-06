@@ -156,6 +156,7 @@ function generateOutput() {
     var aptcwhy = document.getElementById('aptcwhy').value;
     var aptcapp = document.getElementById('aptcapp').value; 
     
+    var retrosub = document.getElementById('retrosub').value;
     var retrocarrier = document.getElementById('retrocarrier').value;
     var retromedpolicy = document.getElementById('retromedpolicy').value;
     var retromedterm = document.getElementById('retromedterm').value;
@@ -359,7 +360,7 @@ function generateOutput() {
 
             subjectText += "30-Day Retroactice Termination Request: " + retrocarrier;
                 
-            outputText += "Policy ID: " + retropolicy + "<br>" + "Subscriber: " + firstLast + "<br>" + "Date of Birth: " + retrodob + "<br>" + "Coverage Start Date: " + retrostart + "<br>" + "Requested Termination Date: " + retroterm + "<br><br>" + firstLast + " (ID:" + hhidField + ") has requested retroactive termination of their coverage back to the requested coverage end date above. Customer has already attested that they have other coverage, and the customer is not aware of any pharmacy claims after the requested termination date.";
+            outputText += "Policy ID: " + retropolicy + "<br>" + "Subscriber: " + retrosub + "<br>" + "Date of Birth: " + retrodob + "<br>" + "Coverage Start Date: " + retrostart + "<br>" + "Requested Termination Date: " + retroterm + "<br><br>" + firstLast + " (ID:" + hhidField + ") has requested retroactive termination of " + retrosub + "'s coverage back to the requested coverage end date above. Customer has already attested that they have other coverage, and the customer is not aware of any pharmacy claims after the requested termination date.";
             outputText += additionalNotes;
             break;
                 

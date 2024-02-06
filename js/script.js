@@ -345,7 +345,7 @@ function generateOutput() {
 
             subjectText += correctiontopic + " Correction";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") stated " + correctioncarrier + " has their " + correctiontopic + "displayed as " + correctionold + ", but Pennie correctly reflects their " + correctiontopic + " as " + correctionupdate + " on Policy ID# (" + correctionpolicy + ").";
+            outputText += firstLast + " (ID:" + hhidField + ") stated " + correctioncarrier + " has their " + correctiontopic + "displayed as " + correctionold + ", but Pennie correctly reflects their " + correctiontopic + " as " + correctionupdate + " on Policy ID#" + correctionpolicy + ".";
             outputText += additionalNotes;
             break;
                 

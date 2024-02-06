@@ -19,12 +19,6 @@ function showQuestions() {
         nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
         hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
     }
-
-    if (selectedOption === 'rop') {
-        nameSection.style.display = 'none';
-    } else {
-        nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
-    }
     
     var notesSection = document.getElementById('notesSection');
     notesSection.style.display = selectedOption !== 'placeholder' ? 'block' : 'none';
@@ -604,7 +598,7 @@ function generateOutput() {
 
             subjectText += "Effective Date Change";	
                 
-            outputText += "Customer " + firstLast + " (ID:" + hhidField + ") qualifies for the 1/1 effective date based on Exceptional Circumstances SEP.";
+            outputText += "Customer qualifies for the 1/1 effective date based on Exceptional Circumstances SEP.";
             outputText += additionalNotes;
             break;
 

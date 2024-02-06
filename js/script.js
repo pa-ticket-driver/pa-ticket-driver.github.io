@@ -380,7 +380,7 @@ function generateOutput() {
 
             subjectText += "Backdate Termination Request";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID#" + backdatepolicy + " to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + otherCoverageStart;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID#" + backdatepolicy + " to be backdated for " + backdatedate + " termination date. The customer's reason for termination is because" + backdatereason + "." + otherCoverageStart;
             outputText += additionalNotes;
             break;
                 
@@ -797,11 +797,10 @@ function toggleReinstateRep() {
 function toggleBackdateOther() {
     var backdateOtherCheckbox = document.getElementById('backdateother');
     var backdateStart = document.getElementById('backdatestart');
-    var backdateType = document.getElementById('backdatetype');
     var otherCoverage = backdateOtherCheckbox.checked;
 
     if (otherCoverage) {
-        otherCoverageStart = "<br><br>" + "The customer's other " + backdateType.value + " will be going into effect starting " + backdateStart.value + ". The customer has also been advised that they will need to submit documentation regarding their other coverage.";
+        otherCoverageStart = "<br><br>" + "The customer's other coverage will be going into effect starting " + backdateStart.value + ". The customer has also been advised that they will need to submit documentation regarding their other coverage.";
         document.getElementById('backdatehide').classList.remove('hidden');
     } else {
         otherCoverageStart = '';

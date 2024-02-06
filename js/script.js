@@ -217,7 +217,6 @@ function generateOutput() {
     
     var maissuecode = document.getElementById('maissuecode').value;
     var maissuesteps = document.getElementById('maissuesteps').value;
-    var maissuehash = document.getElementById('maissuehash').value;
 
     var unsubemail = document.getElementById('unsubemail').value;
 
@@ -531,7 +530,7 @@ function generateOutput() {
 
             subjectText += "MA Account Access Issue";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with claiming their account. Customer reported they're receiving this error " + maissuecode + " after " + maissuesteps + ". I tested this on my end and received the same error message. I completed the following workarounds:" + "<br><br>" + "1. Only one access code was generated after attempting with the original access code." + "<br>" + "2. I confirmed the customer is entering their information as presented in the application instead of basic info (case sensitive, hyphenated last names, middle initials, spaces, county, etc.)" + "<br>" + "3. I confirmed the customer was unable to claim their account using their SSN." + "<br><br>" + "MA Hashtag: " + maissuehash;
+            outputText += firstLast + " (ID:" + hhidField + ") called in needing assistance with claiming their account. Customer reported they're receiving this error " + maissuecode + " after " + maissuesteps + ". I tested this on my end and received the same error message. I completed the following workarounds:" + "<br><br>" + "1. Only one access code was generated after attempting with the original access code." + "<br>" + "2. I confirmed the customer is entering their information as presented in the application instead of basic info (case sensitive, hyphenated last names, middle initials, spaces, county, etc.)" + "<br>" + "3. I confirmed the customer was unable to claim their account using their SSN.";
             outputText += additionalNotes;
             break;
                 

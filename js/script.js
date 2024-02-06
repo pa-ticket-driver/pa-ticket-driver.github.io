@@ -487,7 +487,7 @@ function generateOutput() {
 
             subjectText += "Verification Document for ROP Reinstatement";
                 
-            outputText += firstLast + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on th plan " + ropplan + " with Policy ID# (" + roppolicy + ") due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + firstLast + "_For_" + ropaptc + "_On_" + ropdate;
+            outputText += firstLast + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on the plan " + ropplan + " with Policy ID#" + roppolicy + " due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + firstLast + "_For_" + ropaptc + "_On_" + ropdate;
             outputText += additionalNotes;
             break;
                 

@@ -173,6 +173,7 @@ function generateOutput() {
     var switchdob = document.getElementById('switchdob').value;
     var switchaddress = document.getElementById('switchaddress').value;
     var switchssn = document.getElementById('switchssn').value;
+    var switchtype = document.getElementById('switchtype').value;
     
     var verificationsteps = document.getElementById('verificationsteps').value;
     
@@ -407,8 +408,8 @@ function generateOutput() {
             break;
                 
         case 'switch':
-            ticTypeText += "Triage or Technical";
-            ticSubText += "Triage or Technical";
+            ticTypeText += switchtype;
+            ticSubText += switchtype;
             ticPriorityText += "Medium";
 
             subjectText += "Primary/Self Switch";

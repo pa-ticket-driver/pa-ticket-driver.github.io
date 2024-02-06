@@ -378,7 +378,7 @@ function generateOutput() {
 
             subjectText += "Backdate Termination Request";
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID# (" + backdatepolicy + ") to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + otherCoverageStart;
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting to have their enrollment " + backdatecarrier + ": " + backdateplan + " with Policy ID#" + backdatepolicy + " to be backdated for " + backdatedate + " termination date. The customer reason for termination is " + backdatereason + "." + otherCoverageStart;
             outputText += additionalNotes;
             break;
                 

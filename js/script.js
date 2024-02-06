@@ -19,6 +19,12 @@ function showQuestions() {
         nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
         hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
     }
+
+    if (selectedOption === 'rop') {
+        nameSection.style.display = 'none';
+    } else {
+        nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
+    }
     
     var notesSection = document.getElementById('notesSection');
     notesSection.style.display = selectedOption !== 'placeholder' ? 'block' : 'none';
@@ -191,6 +197,8 @@ function generateOutput() {
     var assisteremail = document.getElementById('assisteremail').value;
     var assisternum = document.getElementById('assisternum').value;
     
+    var rop1stname = document.getElementById('rop1stname').value;
+    var roplastname = document.getElementById('roplastname').value;
     var ropaptc = document.getElementById('ropaptc').value;
     var ropplan = document.getElementById('ropplan').value;
     var roppolicy = document.getElementById('roppolicy').value;
@@ -486,7 +494,7 @@ function generateOutput() {
 
             subjectText += "Verification Document for ROP Reinstatement";
                 
-            outputText += firstLast + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on the plan " + ropplan + " with Policy ID#" + roppolicy + " due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + firstLast + "_For_" + ropaptc + "_On_" + ropdate;
+            outputText += rop1stname + " " + roplastname + " (ID:" + hhidField + ")  called in requesting reinstatement of the APTC amount of $" + ropaptc + " on the plan " + ropplan + " with Policy ID#" + roppolicy + " due to the expiration of ROP on " + ropexpiration + "<br><br>" + "#Verbal_Attestation_Completed_By_" + rop1stname + "_" + roplastname + "_For_" + ropaptc + "_On_" + ropdate;
             outputText += additionalNotes;
             break;
                 

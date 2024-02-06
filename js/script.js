@@ -94,7 +94,7 @@ function generateOutput() {
     var billingcarrier = document.getElementById('billingcarrier').value;
     var billingplan = document.getElementById('billingplan').value;
     var billingpayment = document.getElementById('billingpayment').value;
-    var billingpolicy = document.getElementById('billingpayment').value;
+    var billingpolicy = document.getElementById('billingpolicy').value;
     var billingmember = document.getElementById('billingmember').value;
     var billingdob = document.getElementById('billingdob').value;
     var billingaddress = document.getElementById('billingaddress').value;

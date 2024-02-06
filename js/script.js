@@ -367,7 +367,7 @@ function generateOutput() {
 
             subjectText +=	"Cancellation Request: " + cancelcarrier;
                 
-            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment from " + cancelcarrier + " on the plan " + cancelplan + ", with the Policy ID# (" + cancelpolicy + "), to be cancelled. Customer reason for cancellation is " + cancelreason + ".";
+            outputText += firstLast + " (ID:" + hhidField + ") called in requesting their enrollment from " + cancelcarrier + " on the plan " + cancelplan + ", with the Policy ID#" + cancelpolicy + ", to be cancelled. Customer reason for cancellation is " + cancelreason + ".";
             outputText += additionalNotes;
             break;
                 

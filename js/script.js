@@ -260,7 +260,6 @@ function generateOutput() {
         questionSet.querySelectorAll('input[type="text"]').forEach(function (input) {
             var question = input.previousElementSibling.innerText.replace(':', '').trim();
             var answer = input.value;
-        
         });
         
         switch (selectedOption) {

@@ -455,7 +455,7 @@ function generateOutput() {
 
             subjectText += "1095-A Correction";
                 
-            outputText += firstLast + "'s (ID:" + hhidField + ") 1095-A Tax Form needs the following corrected for Policy ID# (" + taxpolicy + "): " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
+            outputText += firstLast + "'s (ID:" + hhidField + ") 1095-A Tax Form needs the following corrected for Policy ID#" + taxpolicy + ": " + taxinfo + "<br><br>" + "This issue has been reviewed by TL/SUP: " + taxreview;
             outputText += additionalNotes;
             break;
                 

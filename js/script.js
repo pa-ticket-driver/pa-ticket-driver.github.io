@@ -937,9 +937,17 @@ document.addEventListener('input', function(event) {
             for (var i = 0; i < words.length; i++) {
                 if (words[i] === 'pa' || words[i] === 'Pa' || words[i] === 'pA') {
                     words[i] = 'PA';
-                } else if ( words[i] === 'pennie') {
+                } else if (words[i] === 'pennie') {
                     words[i] = 'Pennie';
-                }        
+                } else if (words[i] === 'aptc' || words[i] === 'Aptc') {
+                    words[i] = 'APTC'
+                }  else if (words[i] === 'aptcs' || words[i] === 'Aptcs') {
+                    words[i] = 'APTCs'
+                } else if (words[i] === 'csr' || words[i] === 'Csr') {
+                    words[i] = 'CSR'
+                }  else if (words[i] === 'csrs' || words[i] === 'Csrs') {
+                    words[i] = 'CSRs'
+                }   
             }
             event.target.value = words.join(' ');
         }, 800); 

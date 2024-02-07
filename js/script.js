@@ -921,3 +921,17 @@ function handleCheckboxKeyPress(event) {
 function scrollWin(x, y) {
     window.scrollBy(x, y);
 }
+
+document.addEventListener('input', function(event) {
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        var inputText = event.target.value.toLowerCase();
+        var words = inputText.split(' ');
+        for (var i = 0; i < words.length; i++) {
+            if (words[i] === 'pa') {
+                words[i] = 'PA';
+            }
+        }
+        event.target.value = words.join(' ');
+    }
+});
+

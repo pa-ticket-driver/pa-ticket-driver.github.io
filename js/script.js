@@ -816,7 +816,7 @@ function toggleAddNotes() {
     var addNotes = addNotesCheckbox.checked;
 
     if (addNotes) {
-        additionalNotes = "<br><br>" + "Additional Notes " + notesField.value;
+        additionalNotes = "<br><br>" + notesField.value;
         document.getElementById('noteshide').classList.remove('hidden');
     } else {
         additionalNotes = '';
@@ -924,21 +924,15 @@ function scrollWin(x, y) {
 
 document.addEventListener('input', function(event) {
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-        var inputText = event.target.value;
+        var inputText = ' ' + event.target.value + ' ';
         var words = inputText.split(' ');
         for (var i = 0; i < words.length; i++) {
-            if (words[i] === 'pa') {
+            if (words[i] === 'pa' || words[i] === 'Pa' || words[i] === 'pA') {
                 words[i] = 'PA';
-            } else if ( words[i] === 'Pa') {
-                words[i] = 'PA';
-            } else if ( words[i] === 'pA') {
-                words[i] = 'PA';
-            } else if ( words[i] === 'pennie') {
+            } else if (words[i] === 'pennie') {
                 words[i] = 'Pennie';
             }
-                
         }
-        event.target.value = words.join(' ');
+        event.target.value = words.join(' ').trim();
     }
 });
-

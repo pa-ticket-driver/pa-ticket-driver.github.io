@@ -924,12 +924,19 @@ function scrollWin(x, y) {
 
 document.addEventListener('input', function(event) {
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-        var inputText = event.target.value.toLowerCase();
+        var inputText = event.target.value;
         var words = inputText.split(' ');
         for (var i = 0; i < words.length; i++) {
             if (words[i] === 'pa') {
                 words[i] = 'PA';
+            } else if ( words[i] === 'Pa') {
+                words[i] = 'PA';
+            } else if ( words[i] === 'pA') {
+                words[i] = 'PA';
+            } else if ( words[i] === 'pennie') {
+                words[i] = 'Pennie';
             }
+                
         }
         event.target.value = words.join(' ');
     }

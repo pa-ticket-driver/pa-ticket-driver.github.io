@@ -41,6 +41,7 @@ function generateOutput() {
     var enfcarrierstatus = document.getElementById('enfcarrierstatus').value;
     var enfourstatus = document.getElementById('enfourstatus').value;
     var enfoutcome = document.getElementById('enfoutcome').value;
+        enfoutcome = enfoutcome.charAt(0).toLowerCase() + enfoutcome.slice(1);
     var enfdob = document.getElementById('enfdob').value;
     var enfaddress = document.getElementById('enfaddress').value;
     var enfssn = document.getElementById('enfssn').value;
@@ -56,6 +57,7 @@ function generateOutput() {
     var cnfcarrierstatus = document.getElementById('cnfcarrierstatus').value;
     var cnfourstatus = document.getElementById('cnfourstatus').value;
     var cnfoutcome = document.getElementById('cnfoutcome').value;
+        cnfoutcome = cnfoutcome.charAt(0).toLowerCase() + cnfoutcome.slice(1);
     var cnfdob = document.getElementById('cnfdob').value;
     var cnfaddress = document.getElementById('cnfaddress').value;
     var cnfssn = document.getElementById('cnfssn').value;
@@ -71,6 +73,7 @@ function generateOutput() {
     var tnfcarrierstatus = document.getElementById('tnfcarrierstatus').value;
     var tnfourstatus = document.getElementById('tnfourstatus').value;
     var tnfoutcome = document.getElementById('tnfoutcome').value;
+        tnfoutcome = tnfoutcome.charAt(0).toLowerCase() + tnfoutcome.slice(1); 
     var tnfdob = document.getElementById('tnfdob').value;
     var tnfaddress = document.getElementById('tnfaddress').value;
     var tnfssn = document.getElementById('tnfssn').value;
@@ -84,6 +87,7 @@ function generateOutput() {
     var snfpolicy = document.getElementById('snfpolicy').value;
     var snfmember = document.getElementById('snfmember').value;
     var snfoutcome = document.getElementById('snfoutcome').value;
+        snfoutcome = snfoutcome.charAt(0).toLowerCase() + snfoutcome.slice(1); 
     var snftotalpremium = document.getElementById('snftotalpremium').value;
     var snfaptc = document.getElementById('snfaptc').value;
     var snfcsr = document.getElementById('snfcsr').value;

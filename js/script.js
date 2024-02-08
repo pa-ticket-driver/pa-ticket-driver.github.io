@@ -967,6 +967,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'IVR'
                 } else if (words[i] === 'magi') {
                     words[i] = 'MAGI'
+                } else if (words[i] === 'slcsp') {
+                    words[i] = 'SLCSP'
                 } 
             }
             event.target.value = words.join(' ');

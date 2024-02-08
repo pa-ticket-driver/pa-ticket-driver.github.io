@@ -1001,6 +1001,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Assister'
                 } else if (words[i] === 'carrier') {
                     words[i] = 'Carrier'
+                } else if (words[i] === 'issuer') {
+                    words[i] = 'Issuer'
                 } 
             }
             event.target.value = words.join(' ');

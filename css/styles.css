@@ -109,6 +109,7 @@ input[type="text"], input[type="number"], select, textarea {
     border: 1px solid navy;
     border-radius: 5px;
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     resize: vertical;
 }

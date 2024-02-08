@@ -963,6 +963,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'HIX'
                 } else if (words[i] === 'irs') {
                     words[i] = 'IRS'
+                } else if (words[i] === 'ivr') {
+                    words[i] = 'IVR'
                 } 
             }
             event.target.value = words.join(' ');

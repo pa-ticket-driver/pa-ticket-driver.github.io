@@ -973,6 +973,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'NPN'
                 } else if (words[i] === 'ein') {
                     words[i] = 'EIN'
+                } else if (words[i] === 'oep') {
+                    words[i] = 'OEP'
                 } 
             }
             event.target.value = words.join(' ');

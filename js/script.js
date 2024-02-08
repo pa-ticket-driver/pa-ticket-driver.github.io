@@ -949,7 +949,9 @@ document.addEventListener('input', function(event) {
                     words[i] = 'CSRs'
                 } else if (words[i] === 'cap') {
                     words[i] = 'CAP'
-                }   
+                } else if (words[i] === 'chip') {
+                    words[i] = 'CHIP'
+                }  
             }
             event.target.value = words.join(' ');
         }, 700); 

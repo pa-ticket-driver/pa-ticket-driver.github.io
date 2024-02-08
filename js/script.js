@@ -977,6 +977,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'OEP'
                 } else if (words[i] === 'oop') {
                     words[i] = 'OOP'
+                } else if (words[i] === 'pdm') {
+                    words[i] = 'PDM'
                 } 
             }
             event.target.value = words.join(' ');

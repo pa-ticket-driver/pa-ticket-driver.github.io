@@ -961,6 +961,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'GetInsured'
                 } else if (words[i] === 'hix') {
                     words[i] = 'HIX'
+                } else if (words[i] === 'irs') {
+                    words[i] = 'IRS'
                 } 
             }
             event.target.value = words.join(' ');

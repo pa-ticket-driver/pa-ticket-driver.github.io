@@ -947,6 +947,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'CSR'
                 }  else if (words[i] === 'csrs' || words[i] === 'Csrs') {
                     words[i] = 'CSRs'
+                } else if (words[i] === 'cap') {
+                    words[i] = 'CAP'
                 }   
             }
             event.target.value = words.join(' ');

@@ -1009,7 +1009,9 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Supervisor'
                 }  else if (words[i] === 'app' || words[i] === 'App') {
                     words[i] = 'Application'
-                } 
+                }  else if (words[i] === 'tic') {
+                    words[i] = 'TIC'
+                }
             }
             event.target.value = words.join(' ');
         }, 700); 

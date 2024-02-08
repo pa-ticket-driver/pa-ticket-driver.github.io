@@ -950,7 +950,7 @@ document.addEventListener('input', function(event) {
                 }   
             }
             event.target.value = words.join(' ');
-        }, 800); 
+        }, 700); 
     }
 });
 

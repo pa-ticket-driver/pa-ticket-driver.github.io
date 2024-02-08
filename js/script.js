@@ -928,93 +928,75 @@ function scrollWin(x, y) {
 
 var timeoutId;
 
+var wordReplacements = {
+    'pa': 'PA',
+    'Pa': 'PA',
+    'pA': 'PA',
+    'pennie': 'Pennie',
+    'aptc': 'APTC',
+    'Aptc': 'APTC',
+    'aptcs': 'APTCs',
+    'Aptcs': 'APTCs',
+    'csr': 'CSR',
+    'Csr': 'CSR',
+    'csrs': 'CSRs',
+    'Csrs': 'CSRs',
+    'cap': 'CAP',
+    'chip': 'CHIP',
+    'dob': 'DOB',
+    'dmi': 'DMI',
+    'fpl': 'FPL',
+    'gi': 'GetInsured',
+    'GI': 'GetInsured',
+    'getinsured': 'GetInsured',
+    'Getinsured': 'GetInsured',
+    'hix': 'HIX',
+    'irs': 'IRS',
+    'ivr': 'IVR',
+    'magi': 'MAGI',
+    'slcsp': 'SLCSP',
+    'npn': 'NPN',
+    'ein': 'EIN',
+    'oep': 'OEP',
+    'oop': 'OOP',
+    'pdm': 'PDM',
+    'pii': 'PII',
+    'rop': 'ROP',
+    'phe': 'PHE',
+    'qle': 'QLE',
+    'medicaid': 'Medicaid',
+    'medicare': 'Medicare',
+    'sep': 'SEP',
+    'agent': 'Agent',
+    'broker': 'Broker',
+    'assister': 'Assister',
+    'carrier': 'Carrier',
+    'issuer': 'Issuer',
+    'cx': 'Customer',
+    'Cx': 'Customer',
+    'CX': 'Customer',
+    'sup': 'Supervisor',
+    'Sup': 'Supervisor',
+    'app': 'Application',
+    'App': 'Application',
+    'tic': 'TIC'
+};
+
 document.addEventListener('input', function(event) {
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(function() {
             var inputText = event.target.value;
             var words = inputText.split(' ');
+
             for (var i = 0; i < words.length; i++) {
-                if (words[i] === 'pa' || words[i] === 'Pa' || words[i] === 'pA') {
-                    words[i] = 'PA';
-                } else if (words[i] === 'pennie') {
-                    words[i] = 'Pennie';
-                } else if (words[i] === 'aptc' || words[i] === 'Aptc') {
-                    words[i] = 'APTC'
-                }  else if (words[i] === 'aptcs' || words[i] === 'Aptcs') {
-                    words[i] = 'APTCs'
-                } else if (words[i] === 'csr' || words[i] === 'Csr') {
-                    words[i] = 'CSR'
-                }  else if (words[i] === 'csrs' || words[i] === 'Csrs') {
-                    words[i] = 'CSRs'
-                } else if (words[i] === 'cap') {
-                    words[i] = 'CAP'
-                } else if (words[i] === 'chip') {
-                    words[i] = 'CHIP'
-                } else if (words[i] === 'dob') {
-                    words[i] = 'DOB'
-                } else if (words[i] === 'dmi') {
-                    words[i] = 'DMI'
-                } else if (words[i] === 'fpl') {
-                    words[i] = 'FPL'
-                } else if (words[i] === 'gi' || words[i] === 'GI' || words[i] === 'getinsured' || words[i] === 'Getinsured') {
-                    words[i] = 'GetInsured'
-                } else if (words[i] === 'hix') {
-                    words[i] = 'HIX'
-                } else if (words[i] === 'irs') {
-                    words[i] = 'IRS'
-                } else if (words[i] === 'ivr') {
-                    words[i] = 'IVR'
-                } else if (words[i] === 'magi') {
-                    words[i] = 'MAGI'
-                } else if (words[i] === 'slcsp') {
-                    words[i] = 'SLCSP'
-                } else if (words[i] === 'npn') {
-                    words[i] = 'NPN'
-                } else if (words[i] === 'ein') {
-                    words[i] = 'EIN'
-                } else if (words[i] === 'oep') {
-                    words[i] = 'OEP'
-                } else if (words[i] === 'oop') {
-                    words[i] = 'OOP'
-                } else if (words[i] === 'pdm') {
-                    words[i] = 'PDM'
-                } else if (words[i] === 'pii') {
-                    words[i] = 'PII'
-                } else if (words[i] === 'rop') {
-                    words[i] = 'ROP'
-                } else if (words[i] === 'phe') {
-                    words[i] = 'PHE'
-                } else if (words[i] === 'qle') {
-                    words[i] = 'QLE'
-                } else if (words[i] === 'medicaid') {
-                    words[i] = 'Medicaid'
-                } else if (words[i] === 'medicare') {
-                    words[i] = 'Medicare'
-                } else if (words[i] === 'sep') {
-                    words[i] = 'SEP'
-                } else if (words[i] === 'agent') {
-                    words[i] = 'Agent'
-                } else if (words[i] === 'broker') {
-                    words[i] = 'Broker'
-                } else if (words[i] === 'assister') {
-                    words[i] = 'Assister'
-                } else if (words[i] === 'carrier') {
-                    words[i] = 'Carrier'
-                } else if (words[i] === 'issuer') {
-                    words[i] = 'Issuer'
-                } else if (words[i] === 'cx' || words[i] === 'Cx' || words[i] === 'CX') {
-                    words[i] = 'Customer'
-                } else if (words[i] === 'sup' || words[i] === 'Sup') {
-                    words[i] = 'Supervisor'
-                }  else if (words[i] === 'app' || words[i] === 'App') {
-                    words[i] = 'Application'
-                }  else if (words[i] === 'tic') {
-                    words[i] = 'TIC'
+                var word = words[i];
+                if (word in wordReplacements) {
+                    words[i] = wordReplacements[word];
                 }
             }
+            
             event.target.value = words.join(' ');
-        }, 700); 
+        }, 700);
     }
 });
-

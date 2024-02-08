@@ -991,6 +991,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Medicaid'
                 } else if (words[i] === 'medicare') {
                     words[i] = 'Medicare'
+                } else if (words[i] === 'sep') {
+                    words[i] = 'SEP'
                 } 
             }
             event.target.value = words.join(' ');

@@ -995,6 +995,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'SEP'
                 } else if (words[i] === 'agent') {
                     words[i] = 'Agent'
+                } else if (words[i] === 'broker') {
+                    words[i] = 'Broker'
                 } 
             }
             event.target.value = words.join(' ');

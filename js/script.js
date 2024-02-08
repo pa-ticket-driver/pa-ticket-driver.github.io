@@ -981,6 +981,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'PDM'
                 } else if (words[i] === 'pii') {
                     words[i] = 'PII'
+                } else if (words[i] === 'rop') {
+                    words[i] = 'ROP'
                 } 
             }
             event.target.value = words.join(' ');

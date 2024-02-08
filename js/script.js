@@ -971,6 +971,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'SLCSP'
                 } else if (words[i] === 'npn') {
                     words[i] = 'NPN'
+                } else if (words[i] === 'ein') {
+                    words[i] = 'EIN'
                 } 
             }
             event.target.value = words.join(' ');

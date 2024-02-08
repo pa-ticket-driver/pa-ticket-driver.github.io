@@ -1005,7 +1005,9 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Issuer'
                 } else if (words[i] === 'cx' || words[i] === 'Cx' || words[i] === 'CX') {
                     words[i] = 'Customer'
-                }  
+                } else if (words[i] === 'sup' || words[i] === 'Sup') {
+                    words[i] = 'Supervisor'
+                } 
             }
             event.target.value = words.join(' ');
         }, 700); 

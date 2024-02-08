@@ -1003,7 +1003,9 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Carrier'
                 } else if (words[i] === 'issuer') {
                     words[i] = 'Issuer'
-                } 
+                } else if (words[i] === 'cx' || words[i] === 'Cx' || words[i] === 'CX') {
+                    words[i] = 'Customer'
+                }  
             }
             event.target.value = words.join(' ');
         }, 700); 

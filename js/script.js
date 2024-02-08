@@ -989,6 +989,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'QLE'
                 } else if (words[i] === 'medicaid') {
                     words[i] = 'Medicaid'
+                } else if (words[i] === 'medicare') {
+                    words[i] = 'Medicare'
                 } 
             }
             event.target.value = words.join(' ');

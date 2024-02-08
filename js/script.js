@@ -955,6 +955,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'DOB'
                 } else if (words[i] === 'dmi') {
                     words[i] = 'DMI'
+                } else if (words[i] === 'fpl') {
+                    words[i] = 'FPL'
                 } 
             }
             event.target.value = words.join(' ');

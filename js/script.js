@@ -993,6 +993,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Medicare'
                 } else if (words[i] === 'sep') {
                     words[i] = 'SEP'
+                } else if (words[i] === 'agent') {
+                    words[i] = 'Agent'
                 } 
             }
             event.target.value = words.join(' ');

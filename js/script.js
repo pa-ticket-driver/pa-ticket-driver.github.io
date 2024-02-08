@@ -983,6 +983,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'PII'
                 } else if (words[i] === 'rop') {
                     words[i] = 'ROP'
+                } else if (words[i] === 'phe') {
+                    words[i] = 'PHE'
                 } 
             }
             event.target.value = words.join(' ');

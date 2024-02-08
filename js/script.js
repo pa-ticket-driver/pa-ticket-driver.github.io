@@ -957,7 +957,9 @@ document.addEventListener('input', function(event) {
                     words[i] = 'DMI'
                 } else if (words[i] === 'fpl') {
                     words[i] = 'FPL'
-                } 
+                } else if (words[i] === 'gi' || words[i] === 'GI' || words[i] === 'getinsured' || words[i] === 'Getinsured') {
+                    words[i] = 'GetInsured'
+                }
             }
             event.target.value = words.join(' ');
         }, 700); 

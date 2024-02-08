@@ -985,6 +985,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'ROP'
                 } else if (words[i] === 'phe') {
                     words[i] = 'PHE'
+                } else if (words[i] === 'qle') {
+                    words[i] = 'QLE'
                 } 
             }
             event.target.value = words.join(' ');

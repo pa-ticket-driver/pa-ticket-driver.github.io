@@ -1007,6 +1007,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'Customer'
                 } else if (words[i] === 'sup' || words[i] === 'Sup') {
                     words[i] = 'Supervisor'
+                }  else if (words[i] === 'app' || words[i] === 'App') {
+                    words[i] = 'Application'
                 } 
             }
             event.target.value = words.join(' ');

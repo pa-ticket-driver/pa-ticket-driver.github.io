@@ -975,6 +975,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'EIN'
                 } else if (words[i] === 'oep') {
                     words[i] = 'OEP'
+                } else if (words[i] === 'oop') {
+                    words[i] = 'OOP'
                 } 
             }
             event.target.value = words.join(' ');

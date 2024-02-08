@@ -951,6 +951,8 @@ document.addEventListener('input', function(event) {
                     words[i] = 'CAP'
                 } else if (words[i] === 'chip') {
                     words[i] = 'CHIP'
+                } else if (words[i] === 'dob') {
+                    words[i] = 'DOB'
                 }  
             }
             event.target.value = words.join(' ');

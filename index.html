@@ -8,13 +8,14 @@
 </head>
 
 <body>
-
+<!-- Page Title, future addition of PA Logo will go here -->
 <h1>Pennie Ticket Driver</h1>
 
 <main>
 	<form id="paTicketDriver">
 		<div class="form-column">
 			<div>
+				<!-- Here is where you can add more ticket types to the dropdown, make sure the value is unique -->
 				<label for="type" >Type of Ticket:</label>
 				<select id="type" name="type" onchange="showQuestions()">
 					<option value="placeholder">Select Ticket Type</option>
@@ -55,6 +56,10 @@
 				</select>
 			</div>
 
+			<!-- The div below is what will populate on the form -->
+			<!-- Ensure the class is always set to question-set -->
+			<!-- The id is the value from the relevant dropdown option above followed by Questions -->
+			<!-- Ensure Questions is capitalized, no spaces, nothing after -->
 			<div class="question-set" id="enfQuestions">
 				<h4>Instructions:</h4>
 				<h5>Create when we show the customer's enrollment or enrollment information accurate and the carrier sees anything different.</h5>
@@ -65,7 +70,7 @@
 				<input type="text" id="enfpolicy" name="enfpolicy">
 				
 				<label for="enfplan">Plan Name:</label>
-                <input type="text" id="enfplan" name="enfplan">
+                		<input type="text" id="enfplan" name="enfplan">
 				
 				<label for="enfmember">Member ID:</label>
 				<input type="text" id="enfmember" name="enfmember">
@@ -97,8 +102,8 @@
 				<label for="enfnet">Net Premium:</label>
 				<input type="text" id="enfnet" name="enfnet">
 
-                <label for="enfdates">Effective Dates:</label>
-                <input type="text" id="enfdates" name="enfdates">
+                		<label for="enfdates">Effective Dates:</label>
+                		<input type="text" id="enfdates" name="enfdates">
 				
 				<label for="enfrep">A Carrier Representative was on the line:
 					<input type="checkbox" id="enfrep" name="enfrep" onClick="toggleEnfRep()">

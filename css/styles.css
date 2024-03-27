@@ -1,3 +1,8 @@
+/* Most of this is just how the page looks */
+/* There are some peices farther down the page that handle sections that 
+    are hidden by default (line 212)*/
+/* The hidden sections are revealed using JavaScript */
+
 html {
     scroll-behavior: smooth;
 }
@@ -204,6 +209,7 @@ button#clear-button {
     white-space: pre-wrap;
 }
 
+/* Hidden sections below */
 #nameSection label {
     margin-right: 10px;
 }

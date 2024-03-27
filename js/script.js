@@ -1,39 +1,71 @@
+/* The showQuestions function handles the revealing of question-set classes */
+/* By default everything is hidden */
+/* This function reveals them when they are selected from the dropdown */
 function showQuestions() {
+    /* This variable ensures they are all set to hidden */
+    /* It also re-hides the questions if a different option is selected */
     var questionSets = document.querySelectorAll('.question-set');
     questionSets.forEach(function (set) {
         set.classList.remove('visible');
     });
 
+    /* The type variable is associated with the dropdown list */
     var selectedOption = document.getElementById('type').value;
 
+    /* The questionSet variable adds a capitalized 'Questions' to the end of
+        the option value from the dropdown */
     var questionSet = document.getElementById(selectedOption + 'Questions');
     
+    /* THis if statement reveals the question-set associated with the dropdown selection */
     if (questionSet) {
         questionSet.classList.add('visible');
     }
 
+    /* This if statement makes it so the name and HHID section show up for every
+        question-set excep broker, assister, & overflow */
     if (selectedOption === 'broker' || selectedOption === 'assister' || selectedOption === 'overflow') {
         nameSection.style.display = 'none';
         hhidSection.style.display = 'none';
     } else if (selectedOption === 'rop') {
+        /* This else if statement makes only the HHID show up for the ROP ticket */
         nameSection.style.display = 'none';
         hhidSection.style.display = 'flex';
     } else {
+        /* This else statement ensures the name and HHID section populate for every
+            other ticket */
         nameSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
         hhidSection.style.display = selectedOption !== 'placeholder' ? 'flex' : 'none';
     }
     
+    /* This variable ensures the notes section starts off hidden and reveals after an option is selected */
     var notesSection = document.getElementById('notesSection');
     notesSection.style.display = selectedOption !== 'placeholder' ? 'block' : 'none';
 }
 
+/* The generateOutput function handles ticket generation */
+/* This section should be very carefully edited */
 function generateOutput() {
+    /* All of the variables here are awaiting input on their associated questions
+        within the HTML and preparing to be called */
+    /* The top 4 variables do not need to be touched */
+
+    /* This variable collects which option has been selected from the dropdown */
     var selectedOption = document.getElementById('type').value;
+    
+    /* This variable checks for the value from the dropdown + a capitalized Questions */
     var questionSet = document.getElementById(selectedOption + 'Questions');
     
+    /* These variable check for the name and HHID fields */
     var firstLast = document.getElementById('firstLast').value;
     var hhidField = document.getElementById('hhidField').value;
     
+    /* The following variables are standard, they are simply the for field, 
+        id field, and name field variable being called using one section each */
+    /* The for field, id field, and name field being uniform in HTML allow only one
+        variable to be used for each question*/
+    /* To add new ticket types you will simply copy and past the formatting of one
+        of these variables and correlate it to the for field, id field, and name field
+        that you use in your HTML question-set */
     var enfcarrier = document.getElementById('enfcarrier').value;
     var enfpolicy = document.getElementById('enfpolicy').value;
     var enfplan = document.getElementById('enfplan').value;
@@ -41,6 +73,8 @@ function generateOutput() {
     var enfcarrierstatus = document.getElementById('enfcarrierstatus').value;
     var enfourstatus = document.getElementById('enfourstatus').value;
     var enfoutcome = document.getElementById('enfoutcome').value;
+        /* This is to ensure that even if the user capitalizes the value inputted in
+            the text field it will output as lower case */
         enfoutcome = enfoutcome.charAt(0).toLowerCase() + enfoutcome.slice(1);
     var enfdob = document.getElementById('enfdob').value;
     var enfaddress = document.getElementById('enfaddress').value;
@@ -243,6 +277,8 @@ function generateOutput() {
     var revdortax = document.getElementById('revdortax').value;
     var revdorissue = document.getElementById('revdorissue').value;
     
+    /* These toggle functions are being called here so they can be used within the 
+        generateOutput function without being re-written */
     toggleText();
     toggleTextAble();
     toggleTextJira();
@@ -256,6 +292,7 @@ function generateOutput() {
     toggleNonEscalate();
     toggleBackdateOther();
     
+    /* This is used to ensure fields aren't inputting blank values */
     if (questionSet) {
         var outputText = "";
         var subjectText = "";
@@ -268,16 +305,43 @@ function generateOutput() {
             var answer = input.value;
         });
         
+        /* This section describes what will be outputted in the output panel */
+        /* It is utilizing a switch case system */
+        /* This system allows the variable that was selected from the dropdown to 
+            define the output */
         switch (selectedOption) {
+        
+        /* The case will always be the value from the dropdown options */
+        /* You do not need to add the capitalized "Questions" as that is
+            dynamically added using JavaScript */
         case 'enf':
+            /* These three sections define the ticket details and are only found
+                within the case section of this JavaScript file */
+            /* The output here can be inputted using basic text surrounded by quotes or
+                using dynamically generated content such as the variables called above */
             ticTypeText += "Issuer";
             ticSubText += "Insurer";
             ticPriorityText += "Medium";
 
+            /* The subject text is using a mix of stationary text "" plus (+) dynamic
+                content */
             subjectText += "Enrollment Not Found: " + enfcarrier;	
                 
+            /* The output text will be the body of the ticket */
+            /* The output text is pulled directly from the ticket templates */
+            /* The sections must be seperated by plus (+) symbols */
+            /* The dynamic content listed here must have a variable listed above
+                in the long list of variables */
+            /* Non-dynamic text can be surrounded by quotes */
+            /* There must be a semicolon (;) at the end of every output */
             outputText += firstLast + " (ID:" + hhidField + ") stated that " + enfcarrier + " shows Policy ID#" + enfpolicy + " and " + enfplan + " for Member ID#" + enfmember + " as " + enfcarrierstatus + " on their end, but this plan shows " + enfourstatus + " for " + firstLast + " in our system. Desired outcome would be " + enfoutcome + "." + "<br><br>" + "Customer Name: " + firstLast + "<br>" + "DOB: " + enfdob + "<br>" + "Full Address: " + enfaddress + "<br>" + "Last four digits of SSN: " + enfssn + "<br>" + "Enrollment Premium Amount: " + enftotalpremium + "<br>" + "APTC: " + enfaptc + "<br>" + "Net Premium: " + enfnet + "<br>" + "Effective Dates: " + enfdates + enfRepresentative;
+            
+            /* The notes section is being handled by a function listed later in the code */
+            /* The notes section will only populate if the additional notes checkbox is
+                selected and will fill in whatever information is inputted */
             outputText += additionalNotes;
+
+            /* Ensure you have a "break;" at the end of every case */
             break;
                 
         case 'cnf':
@@ -647,12 +711,16 @@ function generateOutput() {
             break;
     }
 
+        /* Here we are calling the information that was generated within the 
+            correlated case */
         document.getElementById('output').innerHTML = outputText;
         document.getElementById('subject').innerHTML = subjectText;
         document.getElementById('ticType').innerHTML = ticTypeText;
         document.getElementById('ticSub').innerHTML = ticSubText;
         document.getElementById('ticPriority').innerHTML = ticPriorityText;
         
+        /* Here we are changing the format of the output panel so it is apparent
+            ticket generation has been successful */
         var outputPanel = document.getElementById('output-panel');
         outputPanel.style.width = '100%';
         outputPanel.style.margin = '10px';
@@ -662,15 +730,22 @@ function generateOutput() {
         outputPanel.style.borderStyle = 'solid';
         outputPanel.style.boxShadow = '0 0 8px 8px rgba(34, 139, 34, 0.4)';
         
+        /* Here we are applying a new style to the copy ticket & copy subject buttons */
+        /* This "generated" style can be found in the CSS file */
         document.getElementById('copy-output-button').classList.add('generated');
         document.getElementById('copy-subject-button').classList.add('generated');
     }
 }
 
+/* This toggleText function is used to generate specific text based on if the
+    checkbox within the JIRA ticket is marked or not */
 function toggleText() {
+    /* Here we call the variables and add new names to to them */
     var textReceivedCheckbox = document.getElementById('textreceived');
     var textReceived = textReceivedCheckbox.checked;
 
+    /* This if statement means if the checkbox is marked it will output the phrase
+        "has" and if the checkmark is not selected it will output the phrase "has now" */
     if (textReceived) {
         textReceivedText = "has";
     } else {
@@ -678,6 +753,8 @@ function toggleText() {
     }
 }
 
+/* This function does the same thing as the toggleText function but with different 
+    verbiage and reference */
 function toggleTextAble() {
     var textAbleCheckbox = document.getElementById('textable');
     var textAble = textAbleCheckbox.checked;
@@ -689,6 +766,10 @@ function toggleTextAble() {
     }
 }
 
+/* This funtion does the same thing as the toggleText function with some added
+    functionality */
+/* It allows a section to hide/reveal itself based on if the checkbox is selected
+    and outputs different text based on what is selected */
 function toggleTextJira() {
     var textJiraCheckbox = document.getElementById('textjira');
     var textJiraNumber = document.getElementById('textjiranum');
@@ -705,6 +786,8 @@ function toggleTextJira() {
     }
 }
 
+/* This function hides or reveals a section and outputs the carrier representative's
+    name if the checkbox was selected and tect field was filled in */
 function toggleEnfRep() {
     var enfRepCheckbox = document.getElementById('enfrep');
     var enfRepName = document.getElementById('enfrepname');
@@ -719,6 +802,9 @@ function toggleEnfRep() {
     }
 }
 
+/* This function is for if a screenshot will be attached to a ticket or not */
+/* It references a checkbox which if it is selected will output text and 
+    if it is not selected will output nothing */
 function toggleErrorSs() {
     var errorSsCheckbox = document.getElementById('errorss');
     var errorSs = errorSsCheckbox.checked;
@@ -730,6 +816,7 @@ function toggleErrorSs() {
     }
 }
 
+/* This function is the same as toggleEnfRep */
 function toggleCnfRep() {
     var cnfRepCheckbox = document.getElementById('cnfrep');
     var cnfRepName = document.getElementById('cnfrepname');
@@ -744,6 +831,7 @@ function toggleCnfRep() {
     }
 }
 
+/* This function is the same as toggleEnfRep */
 function toggleTnfRep() {
     var tnfRepCheckbox = document.getElementById('tnfrep');
     var tnfRepName = document.getElementById('tnfrepname');
@@ -758,6 +846,8 @@ function toggleTnfRep() {
     }
 }
 
+/* This function accounts for if a call was excalated based on a possible appeal */
+/* It hides or reveals the appropriate sections and outputs the correlating text */
 function togglePosEscalate() {
     var posEscalateCheckbox = document.getElementById('posescalate');
     var posNames = document.getElementById('posnames');
@@ -772,6 +862,7 @@ function togglePosEscalate() {
     }
 }
 
+/* This function is the same as togglePosEscalate */
 function toggleNonEscalate() {
     var nonEscalateCheckbox = document.getElementById('nonescalate');
     var nonNames = document.getElementById('nonnames');
@@ -786,6 +877,7 @@ function toggleNonEscalate() {
     }
 }
 
+/* This function is the same as toggleEnfRep */
 function toggleReinstateRep() {
     var reinstateRepCheckbox = document.getElementById('reinstaterep');
     var reinstateRepName = document.getElementById('reinstaterepname');
@@ -800,6 +892,9 @@ function toggleReinstateRep() {
     }
 }
 
+/* This funtion allows the user to select if the consumer has other coverage or not
+    and reveal another section if the consumer does have other coverage */
+/* The function also outputs the correct text depending on what is selected */
 function toggleBackdateOther() {
     var backdateOtherCheckbox = document.getElementById('backdateother');
     var backdateStart = document.getElementById('backdatestart');
@@ -814,6 +909,9 @@ function toggleBackdateOther() {
     }
 }
 
+/* This function formats the additional notes section of a ticket if additional
+    notes have been added */
+/* If no additional notes were added then it will output nothing */
 function toggleAddNotes() {
     var addNotesCheckbox = document.getElementById('addnotes');
     var notesField = document.getElementById('notesField');
@@ -828,9 +926,15 @@ function toggleAddNotes() {
     }
 }
 
+/* This function clears the form and the Output Panel */
+/* It also resets the styling on the buttons adn on the output panel */
+/* It resets the dropdown as well */
 function clearForm() {
+    /* This variable checked for every type of input used */
     var inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="checkbox"], select, textarea');
     
+    /* This variable clears the checkbox selections and by virtue re-hides 
+        any sections that were revealed */
     inputs.forEach(function (input) {
         if (input.type === 'checkbox') {
             input.checked = false;
@@ -839,6 +943,7 @@ function clearForm() {
         }
     });    
     
+    /* This section applies the hidden class to additional sections */
     document.getElementById('noteshide').classList.add('hidden');
     document.getElementById('backdatehide').classList.add('hidden');
     document.getElementById('reinstaterephide').classList.add('hidden');
@@ -849,6 +954,7 @@ function clearForm() {
     document.getElementById('enfrephide').classList.add('hidden');
     document.getElementById('textjirahide').classList.add('hidden');
 
+    /* These are seperate because ther are not part of the question-set classes */
     document.getElementById('firstLast').value = '';
     document.getElementById('nameSection').style.display = 'none';
     
@@ -858,19 +964,23 @@ function clearForm() {
     document.getElementById('notesField').value = '';
     document.getElementById('notesSection').style.display = 'none';
 
+    /* This resets the dropdown menu */
     document.getElementById('type').selectedIndex = 0;
 
+    /* This removes the visible tag on the question-set classes */
     var questionSets = document.querySelectorAll('.question-set');
     questionSets.forEach(function (set) {
         set.classList.remove('visible');
     });
 
+    /* This clears the output panel */
     document.getElementById('subject').innerHTML = '';
     document.getElementById('output').innerHTML = '';
     document.getElementById('ticType').innerHTML = '';
     document.getElementById('ticSub').innerHTML = '';
     document.getElementById('ticPriority').innerHTML = '';
 
+    /* This resets the styling on the output panel */
     var outputPanel = document.getElementById('output-panel');
     outputPanel.style.width = '100%';
     outputPanel.style.margin = '10px';
@@ -880,10 +990,12 @@ function clearForm() {
     outputPanel.style.borderStyle = 'solid';
     outputPanel.style.boxShadow = 'none';
 
+    /* This removes the styling on the output panel copy buttons */
     document.getElementById('copy-output-button').classList.remove('generated');
     document.getElementById('copy-subject-button').classList.remove('generated');
 }
 
+/* This allows the user to copy the subject of the ticket to their clipboard */
 function copySubject() {
     var subjectContent = document.getElementById('subject').innerText;
 
@@ -897,6 +1009,7 @@ function copySubject() {
     alert('Subject copied to clipboard!');
 }
 
+/* This allows the user to copy the body of the ticket */
 function copyOutput() {
     var outputContent = document.getElementById('output').innerText;
 
@@ -910,6 +1023,7 @@ function copyOutput() {
     alert('Ticket copied to clipboard!');
 }
 
+/* This enables the user to use the enter key to check/uncheck checkboxes */
 function handleCheckboxKeyPress(event) {
     if (event.key === 'Enter') {
       this.checked = !this.checked;
@@ -922,12 +1036,19 @@ function handleCheckboxKeyPress(event) {
     checkbox.addEventListener('keydown', handleCheckboxKeyPress);
   });
 
-function scrollWin(x, y) {
+/* This scrolls the page down when the user generates and output */
+  function scrollWin(x, y) {
     window.scrollBy(x, y);
 }
 
+/* This is a variable call for the timeout on the autocorrect function below */
 var timeoutId;
 
+/* These are the word replacements for the autocorrect funtion */
+/* They are all held within a variable and called via the variable instead of
+    being held inside the autocorrect function */
+/* In order to add new autocorrect prompts you will have to format them exactly 
+    as seen below */
 var wordReplacements = {
     'pa': 'PA',
     'Pa': 'PA',
@@ -982,6 +1103,13 @@ var wordReplacements = {
     'tic': 'TIC'
 };
 
+/* This event listener checks for what the user has entered and updates it if it 
+    matches any of the references from the list above */
+/* This method is being used to create a custom autocorrect library and avoids
+    creating dependencies on outside repositories */
+/* I recommend not touching any of this code */
+/* If the timout it too fast/slow for the autoccrect kicking in you can adjust
+    it using the variable currently set to 700  in the last line */
 document.addEventListener('input', function(event) {
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
         clearTimeout(timeoutId);

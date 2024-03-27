@@ -74,6 +74,11 @@
 			<div class="question-set" id="enfQuestions">
 				<h4>Instructions:</h4>
 				<h5>Create when we show the customer's enrollment or enrollment information accurate and the carrier sees anything different.</h5>
+				
+				<!-- Each of the questions will have a label and input of some type -->
+				<!-- The for field, id field, and name field accross them the same -->
+				<!-- Most of the input types are set to text with a few exceptions 
+					(see line 101 for example)-->
 				<label for="enfcarrier">Carrier Name:</label>
 				<input type="text" id="enfcarrier" name="enfcarrier">
 				
@@ -81,7 +86,7 @@
 				<input type="text" id="enfpolicy" name="enfpolicy">
 				
 				<label for="enfplan">Plan Name:</label>
-                		<input type="text" id="enfplan" name="enfplan">
+                <input type="text" id="enfplan" name="enfplan">
 				
 				<label for="enfmember">Member ID:</label>
 				<input type="text" id="enfmember" name="enfmember">
@@ -93,6 +98,11 @@
 				<input type="text" id="enfourstatus" name="enfourstatus">
 				
 				<label for="enfoutcome">The desired outcome is:</label>
+				<!-- Below is an example of using a text area instead of a text input -->
+				<!-- The reason for this change is textareas are adjustable and format
+					better with large chunks of text -->
+				<!-- The formatting will be different for the variable but the
+					uniform for field, id fireld, and name field will stay the same-->
 				<textarea id="enfoutcome" name="enfoutcome"></textarea>
 				
 				<label for="enfdob">Customer's date of birth:</label>

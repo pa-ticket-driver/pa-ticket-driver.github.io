@@ -4,19 +4,31 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+	<!-- This is the title of the tab the browser -->
 	<title>Pennie Ticket Driver</title>
 </head>
 
 <body>
 
-<h1>Pennie Ticket Driver</h1>
+	<!-- This is the page title -->
+	<h1>Pennie Ticket Driver</h1>
 
 <main>
+	<!-- Don't touch the form id or div class unless you also change everything
+		relevant in the CSS and JS files -->
 	<form id="paTicketDriver">
 		<div class="form-column">
 			<div>
-				<label for="type" >Type of Ticket:</label>
+				<!-- the for field, id field, and name field are the same here
+					This should not be changed -->
+				<!-- The showQuestions funcion is triggered on changing the dropdown -->
+				<!-- Make sure if you cange any of the values to also CTRl+F for them 
+					in the JS and CSS to ensure nothing breaks-->
+				<label for="type">Type of Ticket:</label>
 				<select id="type" name="type" onchange="showQuestions()">
+					<!-- This is where new tickets can be added -->
+					<!-- The value will be referenced in the JavaScript file to build the ticket -->
+					<!-- If you need to add a new ticket this would be the first step -->
 					<option value="placeholder">Select Ticket Type</option>
 					<option value="enf">Enrollment Not Found</option>
 					<option value="cnf">Cancellation Not Found</option>
@@ -55,6 +67,11 @@
 				</select>
 			</div>
 
+			<!-- For any of the ticket generation templates question-set will be the class -->
+			<!-- the question-set class hides all of the questions that will build the ticket 
+				and reveals when the corresponding value is selected from the dropdown -->
+			<!-- The id will always be the value from the above dropdown followed by a 
+				CAPITALIZED first letter on Questions -->
 			<div class="question-set" id="enfQuestions">
 				<h4>Instructions:</h4>
 				<h5>Create when we show the customer's enrollment or enrollment information accurate and the carrier sees anything different.</h5>

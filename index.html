@@ -78,7 +78,7 @@
 				<!-- Each of the questions will have a label and input of some type -->
 				<!-- The for field, id field, and name field accross them the same -->
 				<!-- Most of the input types are set to text with a few exceptions 
-					(see line 101 for example)-->
+					(see line 101, 129, & 427 for examples)-->
 				<label for="enfcarrier">Carrier Name:</label>
 				<input type="text" id="enfcarrier" name="enfcarrier">
 				
@@ -123,9 +123,16 @@
 				<label for="enfnet">Net Premium:</label>
 				<input type="text" id="enfnet" name="enfnet">
 
-                		<label for="enfdates">Effective Dates:</label>
-                		<input type="text" id="enfdates" name="enfdates">
+                <label for="enfdates">Effective Dates:</label>
+                <input type="text" id="enfdates" name="enfdates">
 				
+				<!-- The below sections for enfrep and enfrephide vary from the other questions-->
+				<!-- What this section is doing is revealing another question if the checkbox
+					is selected and hiding it when unselected-->
+				<!-- The onClick toggleEnfRep() is handled in JavaScript-->
+				<!-- the inital hidden class of the second question is handled in CSS-->
+				<!-- You'll also notice the checkbox is within the label closing statement
+					This is so they are inline with eachother-->
 				<label for="enfrep">A Carrier Representative was on the line:
 					<input type="checkbox" id="enfrep" name="enfrep" onClick="toggleEnfRep()">
 				</label>
@@ -417,6 +424,9 @@
 				<label for="correctioncarrier">Carrier Name</label>
 				<input type="text" id="correctioncarrier" name="correctioncarrier">
 				
+				<!-- Here we have another variant -->
+				<!-- Instead of using a text type or text area we are using a dropdown -->
+				<!-- The output of what is selected is the value of the option -->
 				<label for="correctiontopic">Information type that needs to be corrected:</label>
 				<select id="correctiontopic">
 					<option value="OPTION NOT SELECTED">Select Option</option>
@@ -848,11 +858,15 @@
 			<div class="question-set" id="overflowQuestions">
 				<h4>Instructions:</h4>
 				<h5>Used if a customer qualifies, based on the Exceptional Circumstances SEP, for a 1/1 effective date.<br><br>Just click Generate Ticket to build the ticket, unless you have additional notes to add. </h5>
+				<!-- There is no lable or question is this as it is handled by the 
+					name and HHID sections starting line 904 -->
 			</div>
 
 			<div class="question-set" id="revfiledQuestions">
 				<h4>Instructions:</h4>
 				<h5>Used for Tracking Purposes and the customer has already been approved for the SEP. Confirmed the form was submitted or they amended their taxes.</h5>
+				<!-- There is no lable or question is this as it is handled by the 
+					name and HHID sections starting line 904 -->
 			</div>
 
 			<div class="question-set" id="revvendorQuestions">
@@ -887,6 +901,9 @@
 				</select>
 			</div>
 
+			<!-- These sections (name & HHID) are not handled within the question-set class -->
+			<!-- Instead they are hidden using CSS and revealed using JS -->
+			<!-- The reason for this is because they are used in almost every case-->
 			<div class="container">
 				<div class="name" id="nameSection">
 					<label for="firstLast">Primary's First &amp; Last Name:</label>
@@ -899,6 +916,10 @@
 				</div>
 			</div>
 
+			<!-- The notes section is also not handled using a question-set class-->
+			<!-- Instead it is on almost every single ticket and used for extra information -->
+			<!-- The notes section funtions as a checkbox that reaveals a textarea 
+				in the case that additional information is needed -->
 			<div class="notes" id="notesSection">
 				<label for="addnotes">Do you have additional notes?
 					<input type="checkbox" id="addnotes" name="addnotes" onClick="toggleAddNotes()">
@@ -910,6 +931,8 @@
 				</div>
 			</div>
 
+			<!-- This is where the buttons at the bottom of the form are handled -->
+			<!-- There is no need to touch this unless you want to change verbiage -->
 			<div class="formButtons">
 				<button id="generate-output-button" type="button" onclick="generateOutput(); scrollWin(0, 3000)">Generate Ticket</button>
 				<button id="clear-button" type="button" onclick="clearForm()">Reset Form</button>
@@ -917,6 +940,11 @@
 		</div>
 	</form>
 	
+	<!-- The output panel is where the generated ticket will pupulate -->
+	<!-- Using CSS and JS the output panel adjusts styling once the text has been generated -->
+	<!-- The output panel also shows the ticket type,subtype, & subject -->
+	<!-- The ticket details sections ^ are handled in JS -->
+	<!-- The output panel also allows the user to copy the output and subject -->
 	<div id="output-panel">
 		<h3>Generated Ticket</h3>
 		<div id="subject"></div>

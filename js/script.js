@@ -16,7 +16,7 @@ function showQuestions() {
         the option value from the dropdown */
     var questionSet = document.getElementById(selectedOption + 'Questions');
     
-    /* THis if statement reveals the question-set associated with the dropdown selection */
+    /* This if statement reveals the question-set associated with the dropdown selection */
     if (questionSet) {
         questionSet.classList.add('visible');
     }
@@ -1100,7 +1100,7 @@ var wordReplacements = {
     'Sup': 'Supervisor',
     'app': 'Application',
     'App': 'Application',
-    'tic': 'TIC'
+    'tic': 'TIC',
 };
 
 /* This event listener checks for what the user has entered and updates it if it 
